@@ -14,21 +14,21 @@ services:
     command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
     ports:
       - "3306:3306"
-#    networks:
-#      - test_env
-#  application:
-#    container_name: soccer-application-container
-#    build: .
-#    environment:
-#      SPRING_DATASOURCE_URL: jdbc:mysql://soccer-container:3306/turingdb
-#      SPRING_DATASOURCE_USERNAME: root
-#      SPRING_DATASOURCE_PASSWORD: password
-#    ports:
-#      - "8080:8080"
-#    depends_on:
-#      - database
-#    networks:
-#      - test_env
-#networks:
-#  test_env:
-#    driver: bridge
+    networks:
+      - test_env
+  application:
+    container_name: soccer-application-container
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://soccer-container:3306/turingdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+    networks:
+      - test_env
+networks:
+  test_env:
+    driver: bridge
