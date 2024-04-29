@@ -14,20 +14,20 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String playerId;
-    String playerName;
-    String ePlayerName;
+    private Long id;
+    private String playerId;
+    private String playerName;
+    private String ePlayerName;
     @Column(name = "join_yyyy")
-    String joinYyyy;
-    String position;
-    Long backNo;
-    String nation;
-    Date birthDate;
-    String solar;
-    Long height;
-    Long weiget;
-    String teamId;
+    private String joinYyyy;
+    private String position;
+    private Long backNo;
+    private String nation;
+    private Date birthDate;
+    private String solar;
+    private Long height;
+    private Long weiget;
+    private String teamId;
 
 
 

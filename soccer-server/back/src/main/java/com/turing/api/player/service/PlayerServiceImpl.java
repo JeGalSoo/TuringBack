@@ -1,4 +1,4 @@
-package com.example.demo.player.service;
+package com.turing.api.player.service;
 
 public class PlayerServiceImpl {
 }

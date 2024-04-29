@@ -1,4 +1,7 @@
-package com.example.demo.stadium.repository;
+package com.turing.api.stadium.repository;
 
-public class StadiumRepository {
+import com.turing.api.stadium.model.Stadium;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface StadiumRepository extends JpaRepository<Stadium,Long> {
 }

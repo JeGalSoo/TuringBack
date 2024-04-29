@@ -1,4 +1,7 @@
-package com.example.demo.player.repository;
+package com.turing.api.player.repository;
 
-public interface PlayerRepository {
+import com.turing.api.player.model.Player;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PlayerRepository extends JpaRepository<Player,Long> {
 }
