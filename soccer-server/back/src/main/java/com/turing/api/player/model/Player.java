@@ -3,6 +3,7 @@ package com.turing.api.player.model;
 import com.turing.api.team.model.Team;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -16,6 +17,7 @@ public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="player_id")
     private String playerId;
     private String playerName;
     private String ePlayerName;
@@ -25,6 +27,8 @@ public class Player {
     private String position;
     private Long backNo;
     private String nation;
+    @Column
+    @DateTimeFormat(pattern = "dd-MMM-yyyy")
     private Date birthDate;
     private String solar;
     private Long height;

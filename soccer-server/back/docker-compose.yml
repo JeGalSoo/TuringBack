@@ -12,6 +12,7 @@ services:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_ROOT_HOST=%
     command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    restart: always
     ports:
       - "3306:3306"
     networks:
