@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: api
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/turingdb
+    username: root
+    password: password
+  sql:
+    init:
+      platform: mysql
+      mode: always
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        jdbc:
+          lob:
+            '[non_contextual_creation]': true
+        '[format_sql]': true
+    show-sql: true
+#    open-in-view: true
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type: trace
+jwt:
+  iss: turing.co.kr
+  exp: 24*60*60*1000
+  secret: turingturingturingturingturingturingturingturingturing
