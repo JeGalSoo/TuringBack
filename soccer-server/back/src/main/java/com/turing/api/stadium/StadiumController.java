@@ -1,4 +1,4 @@
-package com.example.demo.stadium;
+package com.turing.api.stadium;
 
 public class StadiumController {
 }

@@ -1,15 +1,19 @@
-package com.example.demo.common.service;
-
+package com.turing.api.common.service;
 
 public class UtilServiceImpl implements UtilService {
     private static UtilService instance = new UtilServiceImpl();
-    private UtilServiceImpl(){}
-    public static UtilService getInstance(){return instance;}
+
+    private UtilServiceImpl() {
+    }
+
+    public static UtilService getInstance() {
+        return instance;
+    }
 
     @Override
     public int createRandomInteger(int start, int gapBetweenStartAndEnd) {
-        //0 이상 50 미만의 값을 생성하고 150을 더해줌으로써 키의 범위를 150 이상 200 미만으로 만듦
-        return start + (int)(Math.random() * gapBetweenStartAndEnd);
+        // 0 이상 50 미만의 값을 생성하고 150을 더해줌으로써 키의 범위를 150 이상 200 미만으로 만듦
+        return start + (int) (Math.random() * gapBetweenStartAndEnd);
     }
 
     @Override
@@ -19,19 +23,19 @@ public class UtilServiceImpl implements UtilService {
 
     @Override
     public String createRandomName() {
-        String[] names = {"이정재", "마동석", "송강호", "윤여정", "황정민",
+        String[] names = { "이정재", "마동석", "송강호", "윤여정", "황정민",
                 "정우성", "이병헌", "현 빈", "유해진", "손석구",
                 "전도연", "손예진", "하지원", "김하늘", "송중기",
-                "하정우", "장동건","원 빈", "박해일", "소지섭", "김혜수"};
-        return names[createRandomInteger(0,20)];
+                "하정우", "장동건", "원 빈", "박해일", "소지섭", "김혜수" };
+        return names[createRandomInteger(0, 20)];
     }
 
     @Override
     public String createRandomTitle() {
-        String[] titles = {"혼인과 가족생활","국가는 대외무역","국회의 정기회",
-                "헌법재판소 재판관의 임기","체포·구속·압수 또는 수색","대통령이 제1항",
-                "신체장애자 및 질병·노령","법률이 정하는 바","국민이 되는 요건","국가의 보호","법률로서 확정"};
-        return titles[createRandomInteger(0,10)];
+        String[] titles = { "혼인과 가족생활", "국가는 대외무역", "국회의 정기회",
+                "헌법재판소 재판관의 임기", "체포·구속·압수 또는 수색", "대통령이 제1항",
+                "신체장애자 및 질병·노령", "법률이 정하는 바", "국민이 되는 요건", "국가의 보호", "법률로서 확정" };
+        return titles[createRandomInteger(0, 10)];
     }
 
     @Override
@@ -51,28 +55,27 @@ public class UtilServiceImpl implements UtilService {
                 "신체장애자 및 질병·노령 기타의 사유로 생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.",
                 "법관이 중대한 심신상의 장해로 직무를 수행할 수 없을 때에는 법률이 정하는 바에 의하여 퇴직하게 할 수 있다."
         };
-        return content[createRandomInteger(0,13)];
+        return content[createRandomInteger(0, 13)];
     }
 
     @Override
     public String createRandomCompany() {
-        String[] companies = {"구글","엔비디아","메타","삼성","LG","애플"};
+        String[] companies = { "구글", "엔비디아", "메타", "삼성", "LG", "애플" };
         return null;
     }
 
     @Override
     public String createRandomJob() {
-        String[] names = {"경찰", "소방관", "세일즈맨", "교수", "회계사",
-                "공무원", "의사"};
-        return names[createRandomInteger(0,6)];
+        String[] names = { "경찰", "소방관", "세일즈맨", "교수", "회계사",
+                "공무원", "의사" };
+        return names[createRandomInteger(0, 6)];
     }
 
     @Override
     public String createRandomUsername() {
         String username = "";
-        for(;
-            username.length() < 5;
-            username += String.valueOf((char)('a' + this.createRandomInteger(0, 26))));
+        for (; username.length() < 5; username += String.valueOf((char) ('a' + this.createRandomInteger(0, 26))))
+            ;
         return username;
     }
 }

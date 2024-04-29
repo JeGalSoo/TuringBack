@@ -1,4 +1,4 @@
-package com.example.demo.player;
+package com.turing.api.player;
 
 public class PlayerController {
 }

@@ -1,8 +1,9 @@
-package com.example.demo.common;
+package com.turing.api.common;
 
 public interface UtilService {
-    int createRandomInteger (int start, int end);
-    double createRandomDouble (double start, double end);
+    int createRandomInteger(int start, int end);
+
+    double createRandomDouble(double start, double end);
 
     String createRandomName();
 
@@ -11,6 +12,7 @@ public interface UtilService {
     String createRandomContent();
 
     String createRandomCompany();
+
     String createRandomJob();
 
     String createRandomUsername();

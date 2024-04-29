@@ -1,4 +1,4 @@
-package com.example.demo.common;
+package com.turing.api.common;
 
 import lombok.Getter;
 
@@ -7,35 +7,37 @@ public class UtilServiceImpl implements UtilService {
     @Getter
     private static UtilServiceImpl instance = new UtilServiceImpl();
 
-    private UtilServiceImpl(){}
+    private UtilServiceImpl() {
+    }
 
     @Override
     public int createRandomInteger(int min, int max) {
 
-        return min + (int)(Math.random()*(max-min));
+        return min + (int) (Math.random() * (max - min));
     }
 
     @Override
-    public double createRandomDouble(double min, double max){
+    public double createRandomDouble(double min, double max) {
 
         return Math.round((min +
-                (Math.random()*(max-min)))*10)/10.0;
+                (Math.random() * (max - min))) * 10) / 10.0;
     }
 
-    public String createRandomName(){
-        String[] names = {"이정재", "마동석", "송강호", "윤여정", "황정민",
+    public String createRandomName() {
+        String[] names = { "이정재", "마동석", "송강호", "윤여정", "황정민",
                 "정우성", "이병헌", "현 빈", "유해진", "손석구",
                 "전도연", "손예진", "하지원", "김하늘", "송중기",
-                "하정우", "장동건", "원 빈", "박해일", "소지섭", "김혜수"};
-        return names[createRandomInteger(0,20)];
+                "하정우", "장동건", "원 빈", "박해일", "소지섭", "김혜수" };
+        return names[createRandomInteger(0, 20)];
     }
+
     @Override
     public String createRandomTitle() {
         String[] titles = {
                 "정부", "국회", "위원", "국군", "대통령", "국무총리", "대한민국", "헌법재판소",
                 "여자의 근로", "고용·임금 및 근로조건", "모든 국민", "의무교육", "국가"
         };
-        return titles[createRandomInteger(0,12)];
+        return titles[createRandomInteger(0, 12)];
     }
 
     @Override
@@ -55,30 +57,29 @@ public class UtilServiceImpl implements UtilService {
                 "의무교육은 무상으로 한다",
                 "국가는 농수산물의 수급균형과 유통구조의 개선에 노력하여 가격안정을 도모함으로써 농·어민의 이익을 보호한다."
         };
-        return content[createRandomInteger(0,12)];
+        return content[createRandomInteger(0, 12)];
     }
 
     @Override
     public String createRandomCompany() {
-        String[] companies = {"구글","엔비디아","네이버","삼성","LG","애플"};
-        return companies[createRandomInteger(0,5)];
+        String[] companies = { "구글", "엔비디아", "네이버", "삼성", "LG", "애플" };
+        return companies[createRandomInteger(0, 5)];
     }
 
     @Override
     public String createRandomJob() {
-        String[] jobs = {"경찰","개발자","선생님","소방관","백수","물리치료사"};
-        return jobs[createRandomInteger(0,5)];
+        String[] jobs = { "경찰", "개발자", "선생님", "소방관", "백수", "물리치료사" };
+        return jobs[createRandomInteger(0, 5)];
     }
 
     @Override
     public String createRandomUsername() {
         String username = "";
-            for(; username.length() < 5;
-                username += String.valueOf((char)('a' + this.createRandomInteger(0,26))));     //i++자리에 바로 할당, a 아스키코드는 97이므로 97+26 = z이다.
+        for (; username.length() < 5; username += String.valueOf((char) ('a' + this.createRandomInteger(0, 26))))
+            ; // i++자리에 바로 할당, a 아스키코드는 97이므로 97+26 = z이다.
 
-            return username;
+        return username;
 
     }
-
 
 }

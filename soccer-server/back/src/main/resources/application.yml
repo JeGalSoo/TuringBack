@@ -13,16 +13,16 @@ spring:
   jpa:
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         jdbc:
           lob:
-            '[non_contextual_creation]': true
-        '[format_sql]': true
+            "[non_contextual_creation]": true
+        "[format_sql]": true
     show-sql: true
-#    open-in-view: true
+  #  open-in-view: true
 logging:
   level:
     org:
