@@ -1,4 +1,4 @@
-package com.example.demo.common;
+package com.turing.api.common;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;

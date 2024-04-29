@@ -1,10 +1,10 @@
-//package com.example.demo.common.service;
+// package com.turing.api.common.service;
 //
-//import com.example.demo.common.component.Messenger;
+// import com.turing.api.common.component.Messenger;
 //
-//public interface CommandService<T> {
+// public interface CommandService<T> {
 //
-//    Messenger save(T t);
-//    Messenger deleteById(Long id);
-//    Messenger modify(T t);
-//}
+// Messenger save(T t);
+// Messenger deleteById(Long id);
+// Messenger modify(T t);
+// }

@@ -1,4 +1,4 @@
-package com.example.demo.common.config;
+package com.turing.api.common.config;
 
 import java.util.Collections;
 import org.springframework.context.annotation.Bean;

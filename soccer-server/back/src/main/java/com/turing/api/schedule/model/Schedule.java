@@ -23,6 +23,6 @@ public class Schedule {
     private Integer awayScore;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "Stadium_id", nullable = true, referencedColumnName = "StadiumId", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    @JoinColumn(name = "stadium_id", nullable = true, referencedColumnName = "stadium_id", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private Stadium stadiumId;
 }
