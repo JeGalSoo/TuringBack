@@ -1,4 +1,4 @@
-select * from players;
+# select * from players;
 # select * from boards;
 # select * from articles;
 # desc boards;
