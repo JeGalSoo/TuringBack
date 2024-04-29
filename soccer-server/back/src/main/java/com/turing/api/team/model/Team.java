@@ -1,7 +1,12 @@
 package com.turing.api.team.model;
 
+import com.turing.api.player.model.Player;
+import com.turing.api.stadium.model.Stadium;
 import jakarta.persistence.*;
 import lombok.*;
+import org.w3c.dom.stylesheets.LinkStyle;
+
+import java.util.List;
 
 @Entity(name="teams")
 @Data
@@ -43,6 +48,12 @@ public class Team {
     private String homepage;
     private String owner;
 
+    @ManyToOne
+    @JoinColumn(name = "stadium_id")
+    private Stadium stadiumId;
+
+    @OneToMany(mappedBy = "teamId",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Player> players;
 
 
 }

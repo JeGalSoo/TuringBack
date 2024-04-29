@@ -1,6 +1,8 @@
 package com.turing.api.stadium.model;
 
 import com.turing.api.player.model.Player;
+import com.turing.api.schedule.model.Schedule;
+import com.turing.api.team.model.Team;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,5 +25,9 @@ public class Stadium {
     private String ddd;
     private String tel;
 
+    @OneToMany(mappedBy = "stadiumId",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Schedule> schedules;
+    @OneToMany(mappedBy = "stadiumId",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Team> teams;
 
 }

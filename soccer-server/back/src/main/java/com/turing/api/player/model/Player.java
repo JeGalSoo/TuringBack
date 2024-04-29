@@ -1,11 +1,12 @@
 package com.turing.api.player.model;
 
+import com.turing.api.team.model.Team;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
 
-@Entity
+@Entity(name="players")
 @Getter
 @Builder
 @AllArgsConstructor
@@ -27,9 +28,10 @@ public class Player {
     private String solar;
     private Long height;
     private Long weiget;
-    private String teamId;
 
-
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team teamId;
 
 
 
