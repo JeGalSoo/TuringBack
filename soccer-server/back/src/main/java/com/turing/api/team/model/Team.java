@@ -19,6 +19,7 @@ public class Team extends BaseEntity {
     @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="team_id")
     private String teamId;
     @Column(name = "region_name")
     private String regionName;
@@ -40,7 +41,7 @@ public class Team extends BaseEntity {
     private String owner;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "stadium_id", nullable = true, referencedColumnName = "team_id", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    @JoinColumn(name = "stadium_id", nullable = true, foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private Stadium stadiumId;
 
     @OneToMany(mappedBy = "teamId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

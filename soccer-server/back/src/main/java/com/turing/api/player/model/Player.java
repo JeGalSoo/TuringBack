@@ -16,6 +16,7 @@ public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="player_id")
     private String playerId;
     private String playerName;
     private String ePlayerName;
@@ -31,7 +32,7 @@ public class Player {
     private Long weight;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "team_id", nullable = true, referencedColumnName = "team_id", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
+    @JoinColumn(name = "team_id", nullable = true, foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
     private Team teamId;
 
 

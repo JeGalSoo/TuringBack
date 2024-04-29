@@ -21,7 +21,7 @@ default Team dtoToEntity(teamDto dto,Stadium stadium){
     .fax(dto.getFax())
     .homepage(dto.getHomepage())
     .owner(dto.getOwner())
-    .stadiumId(stadium)
+    // .stadiumId(stadium)
     .build();
 }
 

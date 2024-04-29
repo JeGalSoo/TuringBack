@@ -18,6 +18,7 @@ public class Stadium {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="stadium_id")
     private String stadiumId;
     private String stadiumName;
     private String hometeamId;
@@ -28,6 +29,7 @@ public class Stadium {
 
     @OneToMany(mappedBy = "stadiumId",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Schedule> schedules;
+
     @OneToMany(mappedBy = "stadiumId",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Team> teams;
 
