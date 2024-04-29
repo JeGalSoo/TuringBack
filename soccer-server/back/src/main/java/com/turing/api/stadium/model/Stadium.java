@@ -19,7 +19,8 @@ public class Stadium {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String stadiumId;
-    private String name;
+    private String stadiumName;
+    private String hometeamId;
     private Integer seatCount;
     private String address;
     private String ddd;
