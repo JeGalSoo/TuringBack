@@ -19,6 +19,7 @@ public class Player {
     private String playerId;
     private String playerName;
     private String ePlayerName;
+    private String nickname;
     @Column(name = "join_yyyy")
     private String joinYyyy;
     private String position;
@@ -27,7 +28,7 @@ public class Player {
     private Date birthDate;
     private String solar;
     private Long height;
-    private Long weiget;
+    private Long weight;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", nullable = true, referencedColumnName = "teamId", foreignKey = @ForeignKey(value = ConstraintMode.NO_CONSTRAINT))
