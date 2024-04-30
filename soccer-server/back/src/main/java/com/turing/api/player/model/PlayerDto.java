@@ -2,14 +2,19 @@ package com.turing.api.player.model;
 
 
 import com.turing.api.team.model.Team;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
+import lombok.extern.log4j.Log4j2;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
 
+@Component
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
-@Getter
+@Data
+@Log4j2
 public class PlayerDto {
 
     private Long id;
