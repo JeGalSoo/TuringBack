@@ -143,7 +143,7 @@ INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_s
 INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_score,away_score) VALUES  ('D01','20121019','N','K07','K02','0','0');
 INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_score,away_score) VALUES  ('C06','20121019','N','K03','K09','0','0');
 INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_score,away_score) VALUES  ('D02','20121020','N','K10','K05','0','0');
-INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_score,away_score) VALUES  ('C02','20121020','N','K06','K04','0','0');
+INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_score,away_score) VALUES  ('C02','0121020','N','K06','K04','0','0');
 INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_score,away_score) VALUES  ('C06','20121023','N','K03','K04','0','0');
 INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_score,away_score) VALUES  ('D03','20121023','N','K05','K07','0','0');
 INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_score,away_score) VALUES  ('C02','20121023','N','K06','K10','0','0');
