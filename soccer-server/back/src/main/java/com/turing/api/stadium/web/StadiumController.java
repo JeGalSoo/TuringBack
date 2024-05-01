@@ -3,6 +3,10 @@ package com.turing.api.stadium.web;
 import com.turing.api.enums.Messenger;
 import com.turing.api.stadium.model.Stadium;
 import com.turing.api.stadium.service.StadiumService;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bkh
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +34,19 @@ public class StadiumController {
 
     @GetMapping("/list")
     public ResponseEntity<Integer> allList(){
+<<<<<<< HEAD
+=======
+=======
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class StadiumController {
+    private static StadiumService service;
+
+    public ResponseEntity<Messenger> allList(){
+>>>>>>> 5f1677c582fed7775ff29f2b52a7cda8a42d5e3a
+>>>>>>> bkh
         return service.allList();
     }
 

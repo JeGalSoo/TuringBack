@@ -25,11 +25,12 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
     List<PlayerDto> getAllByPositionAndTeamName();
 
     @Query(value = "SELECT playerName FROM players WHERE playerName LIKE '고%' AND height >= '170' AND" +
-            " teamId =(SELECT t FROM teams t WHERE t.regionName = '수원')")
+            " teamId =(SELECT t FROM teams t WHERE t.regionName = '수원')", nativeQuery = true)
     List<PlayerDto> getAllByPlayerNameAndHeightAndTeam();
 
-    @Query(value = "SELECT playerName " +
-            "FROM players " +
-            "WHERE playerName LIKE '고%' AND height >= '170' AND teamId ='K02'")
+    @Query(value = """
+            SELECT playerName 
+            FROM players 
+            WHERE playerName LIKE '고%' AND height >= '170' AND teamId ='K02'""",nativeQuery = true)
     List<PlayerDto> getAllByPlayerNameAndHeight();
 }
