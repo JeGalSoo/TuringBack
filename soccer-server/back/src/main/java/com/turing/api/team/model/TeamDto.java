@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class teamDto {
+public class TeamDto {
     private Long id;
     private String teamId;
     private String regionName;
