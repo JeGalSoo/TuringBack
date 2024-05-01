@@ -13,21 +13,21 @@ public interface StadiumRepository extends JpaRepository<Stadium,Long> {
     public Integer allList();
 
     @Query(value = "select concat(t.regionName,' ',team_name,' ',s.stadiumName) as team_name from stadiums s join teams t on s.stadiumId=t.stadiumId", nativeQuery = true )
-    public String byTeamAndRegion();
+    public String teamAndRegion();
 
-//    @Query(value = """
-//            select s.stadiumName, sc.scheDate,
-//                  (select t.teamName
-//                   from teams t
-//                   where sc.awayteamId = t.teamId) as awayteam,
-//                  (select t.teamName
-//                   from teams t
-//                   where sc.hometeamId = t.teamId) as hometeam
-//            from stadiums s
-//            join teams t on (t.stadiumId)
-//            join schedules sc on (sc.stadiumId)
-//            where sc.homeScore-sc.awayScore>=3""")
-//    public List<?> homeAndAway();
+    @Query(value = """
+            select s.stadiumName, sc.scheDate,
+                  (select t.teamName
+                   from teams t
+                   where sc.awayteamId = t.teamId) as awayteam,
+                  (select t.teamName
+                   from teams t
+                   where sc.hometeamId = t.teamId) as hometeam
+            from stadiums s
+            join teams t on (t.stadiumId)
+            join schedules sc on (sc.stadiumId)
+            where sc.homeScore-sc.awayScore>=3""")
+    public List<?> homeAndAway();
 
     @Query(value = "select st.stadiumName,(select t.teamName\n" +
            "                     from teams t\n" +

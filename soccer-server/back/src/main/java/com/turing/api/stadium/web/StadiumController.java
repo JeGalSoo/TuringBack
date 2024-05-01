@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
         @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR")
 })
 @RequiredArgsConstructor
-@RequestMapping(path="/api/stadium")
+@RequestMapping(path="/api/search/stadium")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class StadiumController {
     private static StadiumService service;
@@ -33,12 +33,17 @@ public class StadiumController {
         return service.allList();
     }
 
-    public ResponseEntity<Messenger> findByTeamAndRegion(){
+    @GetMapping("/combine")
+    public ResponseEntity<Messenger> teamAndRegion(){
         return service.findByTeamAndRegion();
     }
+
+    @GetMapping("/versus")
     public ResponseEntity<Messenger> homeAndAway(){
         return service.homeAndAway();
     }
+
+    @GetMapping("/noHome")
     public ResponseEntity<Messenger> noWayHome(){
         return service.noWayHome();
     }
