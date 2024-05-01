@@ -19,8 +19,7 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public List<PlayerDto> findAllPosition() {
-//        return playerRepository.getAllPosition();
-        return null;
+        return playerRepository.getAllPosition();
     }
 
     @Override
@@ -31,8 +30,8 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public List<PlayerDto> findAllByPositionAndTeamID() {
-//        return playerRepository.getAllByPositionAndTeamID();
         return null;
+//        return playerRepository.getAllByPositionAndTeamID();
     }
 
     @Override
@@ -43,10 +42,14 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
+    public List<PlayerDto> findAllByPlayerNameAndHeightAndTeam() {
+        return playerRepository.getAllByPlayerNameAndHeightAndTeam();
+    }
+
+    @Override
     public List<PlayerDto> findAllByPlayerNameAndHeight() {
+        return playerRepository.getAllByPlayerNameAndHeight();
 
-
-        return null;
     }
 
 
