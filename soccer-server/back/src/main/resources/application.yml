@@ -3,7 +3,7 @@ spring:
     name: api
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql:/
+    url: jdbc:mysql://43.203.3.189:3307/turingdb
     username: root
     password: password
   sql:

@@ -1,4 +1,4 @@
-package com.turing.api.player;
+package com.turing.api.player.web;
 
 
 import com.turing.api.player.model.Player;
