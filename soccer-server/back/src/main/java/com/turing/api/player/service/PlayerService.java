@@ -13,5 +13,7 @@ public interface PlayerService {
 
     List<PlayerDto> findAllByPositionAndTeamName();
 
+    List<PlayerDto> findAllByPlayerNameAndHeightAndTeam();
+
     List<PlayerDto> findAllByPlayerNameAndHeight();
 }
