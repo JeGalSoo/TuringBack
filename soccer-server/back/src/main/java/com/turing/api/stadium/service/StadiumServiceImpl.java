@@ -13,8 +13,8 @@ public class StadiumServiceImpl implements StadiumService{
     private static StadiumRepository repository;
     @Override
     public ResponseEntity<Messenger> allList() {
-        List list = new ArrayList();
-        list.add(repository.allList());
+//        List list = new ArrayList();
+//        list.add(repository.allList());
         return null;
     }
 

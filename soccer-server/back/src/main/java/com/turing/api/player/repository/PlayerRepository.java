@@ -1,19 +1,8 @@
 package com.turing.api.player.repository;
 
 import com.turing.api.player.model.Player;
-import com.turing.api.player.model.PlayerDto;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-<<<<<<< HEAD
-
-import javax.swing.plaf.basic.BasicDesktopIconUI;
-import java.util.List;
-=======
 import org.springframework.stereotype.Repository;
->>>>>>> bkh
-
-import java.util.List;
-
 
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {

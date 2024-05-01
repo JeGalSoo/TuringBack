@@ -1,11 +1,7 @@
 version: "3"
 services:
   database:
-<<<<<<< HEAD
     container_name: soccer-container
-=======
-    container_name: soccerdb-container
->>>>>>> bkh
     image: mysql:8.0
     volumes:
       - ~/docker/soccer/demo/etc/mysql/conf.d:/etc/mysql/conf.d:ro
@@ -19,19 +15,11 @@ services:
     restart: always
     ports:
       - "3307:3306"
-<<<<<<< HEAD
-#
-#
-#
+
+
+
 #    networks:
 #      - test_env
-=======
-#    networks:
-#      - test_env
-
-
-
->>>>>>> bkh
 #  application:
 #    container_name: soccer-application-container
 #    build: .
