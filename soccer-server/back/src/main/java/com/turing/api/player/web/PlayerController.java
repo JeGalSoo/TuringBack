@@ -1,4 +1,4 @@
-package com.turing.api.player;
+package com.turing.api.player.web;
 
 
 import com.turing.api.player.model.Player;
@@ -23,7 +23,7 @@ import java.util.List;
         @ApiResponse(responseCode = "200", description = "SUCCESS"),
 })
 @RequiredArgsConstructor
-@RequestMapping("/api/soccers")
+@RequestMapping("/api/search/player")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @Slf4j
 public class PlayerController {
@@ -31,31 +31,37 @@ public class PlayerController {
     private final PlayerService service;
 
     @GetMapping( "/position-list")
-    public ResponseEntity<List<PlayerDto>> soccer2() {
+    public ResponseEntity<List<PlayerDto>> findAllPosition() {
         log.info("입력받은 정보 : {}");
         return ResponseEntity.ok(service.findAllPosition());
     }
 
     @GetMapping( "/position-list-includeNull")
-    public ResponseEntity<List<PlayerDto>> soccer3() {
+    public ResponseEntity<List<PlayerDto>> findAllPositionincludeNull() {
         log.info("입력받은 정보 : {}");
         return ResponseEntity.ok(service.findAllPositionincludeNull());
     }
 
     @GetMapping( "/findGK-SuwonTeamId")
-    public ResponseEntity<List<PlayerDto>> soccer4() {
+    public ResponseEntity<List<PlayerDto>> findAllByPositionAndTeamID() {
         log.info("입력받은 정보 : {}");
         return ResponseEntity.ok(service.findAllByPositionAndTeamID());
     }
 
     @GetMapping( "/findGK-SuwonTeamName")
-    public ResponseEntity<List<PlayerDto>> soccer41() {
+    public ResponseEntity<List<PlayerDto>> findAllByPositionAndTeamName() {
         log.info("입력받은 정보 : {}");
         return ResponseEntity.ok(service.findAllByPositionAndTeamName());
     }
 
-    @GetMapping( "/soccer05")
-    public ResponseEntity<List<PlayerDto>> soccer5() {
+    @GetMapping( "/findPlayer-Name-Height-team")
+    public ResponseEntity<List<PlayerDto>> findAllByPlayerNameAndHeightAndTeam() {
+        log.info("입력받은 정보 : {}");
+        return ResponseEntity.ok(service.findAllByPlayerNameAndHeightAndTeam());
+    }
+
+    @GetMapping( "/findPlayer-Name-Height")
+    public ResponseEntity<List<PlayerDto>> findAllByPlayerNameAndHeight() {
         log.info("입력받은 정보 : {}");
         return ResponseEntity.ok(service.findAllByPlayerNameAndHeight());
     }

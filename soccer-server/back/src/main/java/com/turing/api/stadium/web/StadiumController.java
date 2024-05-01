@@ -1,4 +1,4 @@
-package com.turing.api.stadium;
+package com.turing.api.stadium.web;
 
 import com.turing.api.enums.Messenger;
 import com.turing.api.stadium.model.Stadium;
