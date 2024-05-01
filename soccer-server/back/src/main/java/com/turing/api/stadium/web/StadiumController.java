@@ -7,10 +7,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -21,10 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
         @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR")
 })
 @RequiredArgsConstructor
-@RequestMapping(path="/api/search/stadium")
+@RequestMapping(path="/api/stadium")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class StadiumController {
     private static StadiumService service;
+    private final StadiumRouter router;
 
     @GetMapping("/list")
     public ResponseEntity<Integer> allList(){
@@ -45,4 +46,18 @@ public class StadiumController {
     public ResponseEntity<Messenger> noWayHome(){
         return service.noWayHome();
     }
+    @GetMapping(path = "/search")
+    public ResponseEntity<List<Map<String,Object>>> search(@RequestParam(value = "q", required = true) String q,
+                                    @RequestParam(value = "scheDate", required = false)String scheDate,
+                                    @RequestParam(value = "gubun", required = false)String gubun,
+                                    @RequestParam(value = "hometeamId", required = false)String hometeamId,
+                                    @RequestParam(value = "awayteamId", required = false)String awayteamId,
+                                    @RequestParam(value = "homeScore", required = false)Integer homeScore,
+                                    @RequestParam(value = "awayScore", required = false)Integer awayScore
+                                    ){
+        log.info("입력받은 정보 : {}",q);
+        List<Map<String,Object>> o = router.execute(q);
+        return ResponseEntity.ok(o);
+    }
+
 }

@@ -1,7 +1,13 @@
 package com.turing.api.schedule.service;
 
-public interface ScheduleService {
-    String versus();
+import com.turing.api.enums.Messenger;
+import org.springframework.http.ResponseEntity;
 
-    String matchSchedule();
+import java.util.List;
+import java.util.Map;
+
+public interface ScheduleService {
+    ResponseEntity<Messenger> versus();
+
+    ResponseEntity<Messenger> matchSchedule();
 }
