@@ -26,7 +26,7 @@ public interface StadiumRepository extends JpaRepository<Stadium,Long> {
             from stadiums s
             join teams t on (t.stadiumId)
             join schedules sc on (sc.stadiumId)
-            where sc.homeScore-sc.awayScore>=3""")
+            where sc.homeScore-sc.awayScore>=3""", nativeQuery = true)
     public List<?> homeAndAway();
 
     @Query(value = "select st.stadiumName,(select t.teamName\n" +
