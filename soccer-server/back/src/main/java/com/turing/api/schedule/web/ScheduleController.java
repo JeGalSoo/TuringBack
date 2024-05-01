@@ -1,6 +1,7 @@
 package com.turing.api.schedule.web;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public class ScheduleController {
 =======
 import com.turing.api.enums.Messenger;
@@ -39,4 +40,7 @@ public class ScheduleController {
         return service.matchSchedule();
     }
 >>>>>>> jgs
+=======
+public class ScheduleController {
+>>>>>>> khj
 }

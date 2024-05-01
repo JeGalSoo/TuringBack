@@ -17,7 +17,6 @@ public class ScheduleDto {
     private Integer homeScore;
     private Integer awayScore;
 
-
     private Long stadiumId;
 
 }

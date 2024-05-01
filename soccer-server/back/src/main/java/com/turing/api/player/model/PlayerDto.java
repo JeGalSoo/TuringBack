@@ -30,6 +30,5 @@ public class PlayerDto {
     private Integer height;
     private Integer weiget;
 
-
     private Long teamId;
 }

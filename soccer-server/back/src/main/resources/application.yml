@@ -6,6 +6,7 @@ spring:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     url: jdbc:mysql://43.203.3.189:3307
 =======
     url: jdbc:mysql:/
@@ -16,6 +17,9 @@ spring:
 =======
     url: jdbc:mysql://43.203.3.189:3307/turingdb
 >>>>>>> jgs
+=======
+    url: jdbc:mysql://43.203.3.189:3307/turingdb
+>>>>>>> khj
     username: root
     password: password
   sql:

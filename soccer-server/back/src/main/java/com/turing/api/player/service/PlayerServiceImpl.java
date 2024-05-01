@@ -50,6 +50,10 @@ public class PlayerServiceImpl implements PlayerService {
     public List<PlayerDto> findAllByPlayerNameAndHeight() {
         return playerRepository.getAllByPlayerNameAndHeight();
 
+<<<<<<< HEAD
+=======
+        return null;
+>>>>>>> khj
     }
 
 
