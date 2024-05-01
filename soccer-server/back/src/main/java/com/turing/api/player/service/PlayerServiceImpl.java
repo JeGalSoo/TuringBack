@@ -45,7 +45,6 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public List<PlayerDto> findAllByPlayerNameAndHeight() {
 
-
         return null;
     }
 
