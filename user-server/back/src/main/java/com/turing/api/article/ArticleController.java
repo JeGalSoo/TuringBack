@@ -1,9 +1,9 @@
-package com.example.demo.article;
+package com.turing.api.article;
 
-import com.example.demo.article.model.ArticleDto;
-import com.example.demo.article.service.ArticleService;
-import com.example.demo.common.component.Messenger;
-import com.example.demo.common.component.pagination.PageRequestVo;
+import com.turing.api.article.model.ArticleDto;
+import com.turing.api.article.service.ArticleService;
+import com.turing.api.common.component.Messenger;
+import com.turing.api.common.component.pagination.PageRequestVo;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;

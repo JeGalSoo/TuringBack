@@ -1,14 +1,14 @@
-package com.example.demo.article.service;
+package com.turing.api.article.service;
 
-import com.example.demo.article.model.Article;
-import com.example.demo.article.model.ArticleDto;
-import com.example.demo.board.model.Board;
-import com.example.demo.common.service.CommandService;
-import com.example.demo.common.service.QueryService;
-import com.example.demo.user.model.User;
+
+import com.turing.api.article.model.Article;
+import com.turing.api.article.model.ArticleDto;
+import com.turing.api.board.model.Board;
+import com.turing.api.common.service.CommandService;
+import com.turing.api.common.service.QueryService;
+import com.turing.api.user.model.User;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ArticleService extends CommandService<ArticleDto>, QueryService<ArticleDto> {
 

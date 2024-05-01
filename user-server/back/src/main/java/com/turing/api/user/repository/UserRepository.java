@@ -1,8 +1,8 @@
-package com.example.demo.user.repository;
+package com.turing.api.user.repository;
 
 import com.example.demo.article.model.Article;
-import com.example.demo.user.model.User;
-import com.example.demo.user.model.UserDto;
+import com.turing.api.user.model.User;
+import com.turing.api.user.model.UserDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

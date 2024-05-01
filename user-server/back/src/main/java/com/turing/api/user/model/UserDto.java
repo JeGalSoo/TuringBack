@@ -1,4 +1,4 @@
-package com.example.demo.user.model;
+package com.turing.api.user.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

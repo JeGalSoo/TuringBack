@@ -1,9 +1,7 @@
-package com.example.demo.article.repository;
+package com.turing.api.article.repository;
 
 
-import com.example.demo.article.model.Article;
-import com.example.demo.article.model.ArticleDto;
-import com.example.demo.board.model.Board;
+import com.turing.api.article.model.Article;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

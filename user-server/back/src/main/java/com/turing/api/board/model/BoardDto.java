@@ -1,12 +1,8 @@
-package com.example.demo.board.model;
+package com.turing.api.board.model;
 
-import com.example.demo.article.model.Article;
 import lombok.*;
 import org.springframework.stereotype.Component;
-
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 @NoArgsConstructor

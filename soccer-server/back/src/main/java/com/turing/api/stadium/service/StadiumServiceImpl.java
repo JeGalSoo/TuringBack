@@ -12,7 +12,7 @@ import java.util.List;
 public class StadiumServiceImpl implements StadiumService{
     private static StadiumRepository repository;
     @Override
-    public ResponseEntity<Messenger> allList() {
+    public ResponseEntity<Integer> allList() {
 //        List list = new ArrayList();
 //        list.add(repository.allList());
         return null;

@@ -1,4 +1,4 @@
-package com.example.demo.common;
+package com.turing.api.common;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

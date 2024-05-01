@@ -1,4 +1,4 @@
-package com.example.demo.proxy;
+package com.turing.api.proxy;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;

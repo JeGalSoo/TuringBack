@@ -1,5 +1,7 @@
-package com.example.demo.common.service;
+package com.turing.api.common.service;
 
+
+import com.example.demo.common.UtilService;
 
 public class UtilServiceImpl implements UtilService {
     private static UtilService instance = new UtilServiceImpl();
@@ -13,9 +15,15 @@ public class UtilServiceImpl implements UtilService {
     }
 
     @Override
-    public double createRandomDouble(int start, int gapBetweenStartAndEnd) {
-        return (Math.round((start + Math.random() * gapBetweenStartAndEnd) * 10) / 10.0);
+    public double createRandomDouble(double start, double end) {
+        return 0;
     }
+
+
+//    @Override
+//    public double createRandomDouble(int start, int gapBetweenStartAndEnd) {
+//        return (Math.round((start + Math.random() * gapBetweenStartAndEnd) * 10) / 10.0);
+//    }
 
     @Override
     public String createRandomName() {

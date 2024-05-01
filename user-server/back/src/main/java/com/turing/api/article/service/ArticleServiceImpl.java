@@ -1,11 +1,8 @@
-package com.example.demo.article.service;
+package com.turing.api.article.service;
 
-import com.example.demo.article.model.Article;
-import com.example.demo.article.model.ArticleDto;
-import com.example.demo.article.repository.ArticleRepository;
-import com.example.demo.board.model.Board;
-import com.example.demo.common.component.Messenger;
-import com.example.demo.user.model.User;
+import com.turing.api.article.model.ArticleDto;
+import com.turing.api.article.repository.ArticleRepository;
+import com.turing.api.common.component.Messenger;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

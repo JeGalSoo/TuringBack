@@ -1,4 +1,4 @@
-package com.example.demo.common.junit;
+package com.turing.api.common.junit;
 
 public class Item {
     public String print() {

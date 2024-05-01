@@ -1,4 +1,4 @@
-package com.example.demo.common.component.pagination;
+package com.turing.api.common.component.pagination;
 
 import com.example.demo.article.model.ArticleDto;
 import lombok.*;

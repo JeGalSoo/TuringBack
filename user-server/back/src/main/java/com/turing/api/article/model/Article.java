@@ -1,7 +1,8 @@
-package com.example.demo.article.model;
-import com.example.demo.board.model.Board;
-import com.example.demo.common.BaseEntity;
-import com.example.demo.user.model.User;
+package com.turing.api.article.model;
+
+import com.turing.api.board.model.Board;
+import com.turing.api.common.BaseEntity;
+import com.turing.api.user.model.User;
 import jakarta.persistence.*;
 import lombok.*;
 

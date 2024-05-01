@@ -1,9 +1,6 @@
-package com.example.demo.common.component.security;
+package com.turing.api.common.component.security;
 
-import com.example.demo.user.model.User;
-import com.example.demo.user.model.UserDto;
-import com.example.demo.user.repository.UserRepository;
-import com.example.demo.user.service.UserService;
+import com.turing.api.user.model.UserDto;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
@@ -16,8 +13,6 @@ import javax.crypto.SecretKey;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Component
 @Slf4j

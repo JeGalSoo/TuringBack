@@ -1,22 +1,16 @@
-package com.example.demo.common.component.interceptor;
+package com.turing.api.common.component.interceptor;
 
-import com.example.demo.common.component.security.JwtProvider;
-import com.example.demo.user.model.User;
 import com.example.demo.user.repository.UserRepository;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
+import com.turing.api.common.component.security.JwtProvider;
 import jakarta.annotation.Nullable;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ObjectUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.crypto.SecretKey;
-import java.util.Optional;
 import java.util.stream.Stream;
 
 @Slf4j

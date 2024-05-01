@@ -1,4 +1,4 @@
-package com.example.demo.common;
+package com.turing.api.common;
 
 import lombok.Getter;
 

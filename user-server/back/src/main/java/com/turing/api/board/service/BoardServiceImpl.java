@@ -1,9 +1,9 @@
-package com.example.demo.board.service;
+package com.turing.api.board.service;
 
-import com.example.demo.board.model.Board;
-import com.example.demo.board.model.BoardDto;
-import com.example.demo.board.repository.BoardRepository;
-import com.example.demo.common.component.Messenger;
+import com.turing.api.board.model.Board;
+import com.turing.api.board.model.BoardDto;
+import com.turing.api.board.repository.BoardRepository;
+import com.turing.api.common.component.Messenger;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

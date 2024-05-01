@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface StadiumService {
-    ResponseEntity<Messenger> allList();
+    ResponseEntity<Integer> allList();
 
     ResponseEntity<Messenger> findByTeamAndRegion();
 

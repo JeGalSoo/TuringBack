@@ -1,10 +1,10 @@
-package com.example.demo.user.service;
+package com.turing.api.user.service;
 
-import com.example.demo.common.component.security.JwtProvider;
-import com.example.demo.common.component.Messenger;
-import com.example.demo.user.model.User;
-import com.example.demo.user.model.UserDto;
-import com.example.demo.user.repository.UserRepository;
+import com.turing.api.common.component.Messenger;
+import com.turing.api.common.component.security.JwtProvider;
+import com.turing.api.user.model.User;
+import com.turing.api.user.model.UserDto;
+import com.turing.api.user.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

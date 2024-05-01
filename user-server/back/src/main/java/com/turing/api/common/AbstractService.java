@@ -1,4 +1,4 @@
-package com.example.demo.common;
+package com.turing.api.common;
 
 public abstract class AbstractService<T> {
 

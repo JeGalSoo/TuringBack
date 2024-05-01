@@ -1,4 +1,4 @@
-package com.example.demo.common.component.files;
+package com.turing.api.common.component.files;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

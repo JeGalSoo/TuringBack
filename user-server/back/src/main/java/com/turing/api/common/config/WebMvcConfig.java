@@ -1,11 +1,10 @@
-package com.example.demo.common.config;
+package com.turing.api.common.config;
 
-import com.example.demo.common.component.interceptor.AuthInterceptor;
+import com.turing.api.common.component.interceptor.AuthInterceptor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
 @Configuration
 @RequiredArgsConstructor

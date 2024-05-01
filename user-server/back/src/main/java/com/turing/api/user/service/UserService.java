@@ -1,14 +1,12 @@
-package com.example.demo.user.service;
+package com.turing.api.user.service;
 
-import com.example.demo.common.component.Messenger;
-import com.example.demo.common.service.CommandService;
-import com.example.demo.common.service.QueryService;
-import com.example.demo.user.model.User;
-import com.example.demo.user.model.UserDto;
+import com.turing.api.common.component.Messenger;
+import com.turing.api.common.service.CommandService;
+import com.turing.api.common.service.QueryService;
+import com.turing.api.user.model.User;
+import com.turing.api.user.model.UserDto;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 
 public interface UserService extends CommandService<User>, QueryService<UserDto> {

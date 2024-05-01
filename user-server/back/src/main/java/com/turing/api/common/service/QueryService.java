@@ -1,4 +1,4 @@
-package com.example.demo.common.service;
+package com.turing.api.common.service;
 
 import java.util.List;
 import java.util.Optional;

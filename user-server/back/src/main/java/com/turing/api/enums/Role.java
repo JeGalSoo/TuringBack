@@ -1,4 +1,4 @@
-package com.example.demo.enums;
+package com.turing.api.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

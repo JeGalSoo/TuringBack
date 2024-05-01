@@ -1,10 +1,10 @@
-package com.example.demo.board;
+package com.turing.api.board;
 
-import com.example.demo.board.model.Board;
-import com.example.demo.board.model.BoardDto;
-import com.example.demo.board.service.BoardService;
-import com.example.demo.common.component.Messenger;
-import com.example.demo.common.component.pagination.PageRequestVo;
+import com.turing.api.board.model.Board;
+import com.turing.api.board.model.BoardDto;
+import com.turing.api.board.service.BoardService;
+import com.turing.api.common.component.Messenger;
+import com.turing.api.common.component.pagination.PageRequestVo;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+
 
 @Slf4j
 @RestController

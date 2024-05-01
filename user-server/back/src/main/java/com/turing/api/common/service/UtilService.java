@@ -1,4 +1,4 @@
-package com.example.demo.common.service;
+package com.turing.api.common.service;
 
 public interface UtilService {
     int createRandomInteger(int start, int gapBetweenStartAndEnd);

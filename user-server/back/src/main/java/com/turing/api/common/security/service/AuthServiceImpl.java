@@ -1,9 +1,9 @@
-package com.example.demo.common.security.service;
+package com.turing.api.common.security.service;
 
-import com.example.demo.common.component.Messenger;
 import com.example.demo.user.model.User;
 import com.example.demo.user.model.UserDto;
 import com.example.demo.user.repository.UserRepository;
+import com.turing.api.common.component.Messenger;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import lombok.RequiredArgsConstructor;

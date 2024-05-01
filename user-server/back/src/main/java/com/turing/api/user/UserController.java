@@ -1,10 +1,11 @@
-package com.example.demo.user;
+package com.turing.api.user;
 
-import com.example.demo.common.component.Messenger;
-import com.example.demo.common.component.pagination.PageRequestVo;
-import com.example.demo.user.model.User;
-import com.example.demo.user.model.UserDto;
-import com.example.demo.user.service.UserService;
+
+import com.turing.api.common.component.Messenger;
+import com.turing.api.common.component.pagination.PageRequestVo;
+import com.turing.api.user.model.User;
+import com.turing.api.user.model.UserDto;
+import com.turing.api.user.service.UserService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;

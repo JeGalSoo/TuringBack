@@ -1,11 +1,10 @@
-package com.example.demo.board.service;
+package com.turing.api.board.service;
 
-import com.example.demo.board.model.Board;
-import com.example.demo.board.model.BoardDto;
-import com.example.demo.common.service.CommandService;
-import com.example.demo.common.service.QueryService;
 
-import java.util.Optional;
+import com.turing.api.board.model.Board;
+import com.turing.api.board.model.BoardDto;
+import com.turing.api.common.service.CommandService;
+import com.turing.api.common.service.QueryService;
 
 public interface BoardService extends CommandService<Board>, QueryService<BoardDto> {
 
