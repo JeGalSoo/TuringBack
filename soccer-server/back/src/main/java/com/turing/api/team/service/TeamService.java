@@ -47,11 +47,11 @@ public interface TeamService {
         .build();
     }
     
-    List<?> sql1();
-    List<TeamDto> sql10();
-    List<TeamDto> sql12();
-    List<TeamDto> sql13();
-    List<TeamDto> sql19();
-    List<TeamDto> sql20();
-    List<TeamDto> sql21();
+    // List<TeamDto> findAllTeam();
+    // List<TeamDto> findTeamByPosionAndRegionName();
+    // List<TeamDto> findTeamByPlayerHeightAndRegionName();
+    // List<TeamDto> findAllTeamByPositionNull();
+    // List<TeamDto> findTeamAngHeightByRegionName();
+    // List<TeamDto> findTeamByPosition();
+    // List<TeamDto> find5PlayerByHeight();
 }

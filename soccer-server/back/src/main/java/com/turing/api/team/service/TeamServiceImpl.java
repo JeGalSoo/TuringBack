@@ -17,77 +17,66 @@ public class TeamServiceImpl implements TeamService {
 
   private final TeamRepository repository;
 
-  @Override
-  public List<?> sql1() {
-    log.info("gpgpz");
+  // @Override
+  // public List<TeamDto> findAllTeam() {
+  //   List<TeamDto> list = repository.findAllTeam().stream()
+  //       .map(i->entityToDto(i))
+  //       .collect(Collectors.toList());
+  //   return list;
+  // }
 
-    // List<TeamDto> list = repository.findAllTeam();
-    List<?> list = repository.findAll().stream()
-        .map(i->entityToDto(i))
-        .collect(Collectors.toList());
-    return list;
-    // return null;
-  }
+  // @Override
+  // public List<TeamDto> findTeamByPosionAndRegionName() {
+  //   String position = "GK";
+  //   String regionName1 = "수원";
+  //   String regionName2 = "대전";
+  //   List<TeamDto> list = repository.findTeamByPosionAndRegionName(position, regionName1, regionName2).stream()
+  //       .map(i -> entityToDto(i))
+  //       .collect(Collectors.toList());
+  //   return list;
+  // }
 
-  @Override
-  public List<TeamDto> sql10() {
-    String position = "GK";
-    String regionName1 = "수원";
-    String regionName2 = "대전";
-    // List<TeamDto> list = repository.sql10(position, regionName1, regionName2).stream()
-    //     .map(i -> entityToDto(i))
-    //     .collect(Collectors.toList());
-    // return list;
-    return null;
-  }
+  // @Override
+  // public List<TeamDto> findTeamByPlayerHeightAndRegionName() {
+  //   String regionName1 = "수원";
+  //   String regionName2 = "대전";
+  //   List<TeamDto> list = repository.findTeamByPlayerHeightAndRegionName(regionName1, regionName2).stream()
+  //       .map(i -> entityToDto(i))
+  //       .collect(Collectors.toList());
+  //   return list;
+  // }
 
-  @Override
-  public List<TeamDto> sql12() {
-    String regionName1 = "수원";
-    String regionName2 = "대전";
-    // List<TeamDto> list = repository.sql12(regionName1, regionName2).stream()
-    //     .map(i -> entityToDto(i))
-    //     .collect(Collectors.toList());
-    // return list;
-    return null;
-  }
+  // @Override
+  // public List<TeamDto> findAllTeamByPositionNull() {
+  //   List<TeamDto> list = repository.findAllTeamByPositionNull().stream()
+  //       .map(i -> entityToDto(i))
+  //       .collect(Collectors.toList());
+  //   return list;
+  // }
 
-  @Override
-  public List<TeamDto> sql13() {
-    // List<TeamDto> list = repository.sql13().stream()
-    //     .map(i -> entityToDto(i))
-    //     .collect(Collectors.toList());
-    // return list;
-    return null;
-  }
+  // public List<TeamDto> findTeamAngHeightByRegionName() {
+  //   String regionName = "인천";
+  //   List<TeamDto> list = repository.findTeamAngHeightByRegionName(regionName).stream()
+  //       .map(i -> entityToDto(i))
+  //       .collect(Collectors.toList());
+  //   return list;
+  // }
 
-  public List<TeamDto> sql19() {
-    String regionName = "인천";
-    // List<TeamDto> list = repository.sql19(regionName).stream()
-    //     .map(i -> entityToDto(i))
-    //     .collect(Collectors.toList());
-    // return list;
-    return null;
-  }
+  // @Override
+  // public List<TeamDto> findTeamByPosition() {
+  //   String position = "MF";
+  //   List<TeamDto> list = repository.findTeamByPosition(position).stream()
+  //       .map(i -> entityToDto(i))
+  //       .collect(Collectors.toList());
+  //   return list;
+  // }
 
-  @Override
-  public List<TeamDto> sql20() {
-    // String position = "MF";
-    // List<TeamDto> list = repository.sql19(position).stream()
-    //     .map(i -> entityToDto(i))
-    //     .collect(Collectors.toList());
-    // return list;
-    return null;
-  }
-
-  @Override
-  public List<TeamDto> sql21() {
-    String position = "MF";
-    // List<TeamDto> list = repository.sql19(position).stream()
-    //     .map(i -> entityToDto(i))
-    //     .collect(Collectors.toList());
-    // return list;
-    return null;
-  }
+  // @Override
+  // public List<TeamDto> find5PlayerByHeight() {
+  //   List<TeamDto> list = repository.find5PlayerByHeight().stream()
+  //       .map(i -> entityToDto(i))
+  //       .collect(Collectors.toList());
+  //   return list;
+  // }
 
 }
