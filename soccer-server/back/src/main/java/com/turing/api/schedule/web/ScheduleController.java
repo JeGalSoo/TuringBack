@@ -1,4 +1,4 @@
-package com.turing.api.schedule;
+package com.turing.api.schedule.web;
 
 public class ScheduleController {
 }
