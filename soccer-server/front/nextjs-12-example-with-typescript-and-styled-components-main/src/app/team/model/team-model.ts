@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 export default interface TeamModel {
 
+=======
+export default interface TeamModel{
+>>>>>>> jgs
     id?: number
     teamId?: string
     regionName?: string
@@ -15,7 +19,12 @@ export default interface TeamModel {
     homepage?: string
     owner?: string
 
+<<<<<<< HEAD
     //  Stadium stadiumId?: string
 
     //  List<Player> players?: string
+=======
+    // private Stadium stadiumId?: string
+    // private List<Player> players?: string
+>>>>>>> jgs
 }
