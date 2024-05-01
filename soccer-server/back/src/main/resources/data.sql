@@ -238,7 +238,8 @@ INSERT INTO schedules (stadium_id,sche_date,gubun,hometeam_id,awayteam_id,home_s
 
 INSERT INTO players (player_id,player_name,team_id,e_player_name,nickname,join_yyyy,position,back_no,nation,birth_date,solar,height,weight)
 VALUES  ('2009175','우르모브','K06','','','2009','DF','4','유고','30-AUG-1987','1','180','70');
-INSERT INTO players (player_id,player_name,team_id,e_player_name,nickname,join_yyyy,position,back_no,nation,birth_date,solar,height,weight) VALUES  ('2007188','윤희준','K06','','','2005','DF','15','','01-NOV-1982','1','180','74');
+INSERT INTO players (player_id,player_name,team_id,e_player_name,nickname,join_yyyy,position,back_no,nation,birth_date,solar,height,weight)
+VALUES  ('2007188','윤희준','K06','','','2005','DF','15','','01-NOV-1982','1','180','74');
 INSERT INTO players (player_id,player_name,team_id,e_player_name,nickname,join_yyyy,position,back_no,nation,birth_date,solar,height,weight) VALUES  ('2012073','김규호','K06','','','2011','DF','23','','13-JUL-1989','1','177','72');
 INSERT INTO players (player_id,player_name,team_id,e_player_name,nickname,join_yyyy,position,back_no,nation,birth_date,solar,height,weight) VALUES  ('2007178','김민성','K06','','','','DF','20','','23-JUN-1983','1','182','73');
 INSERT INTO players (player_id,player_name,team_id,e_player_name,nickname,join_yyyy,position,back_no,nation,birth_date,solar,height,weight) VALUES  ('2007191','김장관','K06','','배추도사,작은삼손','2007','DF','18','','05-JUN-1984','2','170','61');
