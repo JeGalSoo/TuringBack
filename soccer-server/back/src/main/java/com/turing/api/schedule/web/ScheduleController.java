@@ -1,8 +1,5 @@
 package com.turing.api.schedule.web;
 
-<<<<<<< HEAD
-public class ScheduleController {
-=======
 import com.turing.api.enums.Messenger;
 import com.turing.api.schedule.service.ScheduleService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -38,5 +35,4 @@ public class ScheduleController {
     public String teamAndRegion() {
         return service.matchSchedule();
     }
->>>>>>> jgs
 }
