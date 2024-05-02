@@ -3,14 +3,22 @@ package com.turing.api.player.repository;
 import com.turing.api.player.model.Player;
 import com.turing.api.player.model.PlayerDto;
 import java.util.List;
+
+import com.turing.api.player.service.PalayerDao;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EntityManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+
 @Repository
-public interface PlayerRepository extends JpaRepository<Player, Long> {
+public interface PlayerRepository extends JpaRepository<Player, Long> , PalayerDao {
+
+
 
     @Query("select distinct position from players ")
     List<PlayerDto> getAllPosition();

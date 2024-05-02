@@ -30,16 +30,16 @@ public interface StadiumJpqlRepository<Stadium> {
     public List<Map<String, String>> homeAndAway();
 
     @Query("""
-select p.player_name 선수이름,
-        p.position 포지션,
-        concat(t.region_name,'[]',t.team_name) 팀명,
-        s.stadium_name 스타디움,
-        sc.sche_date 경기날짜
-from stadium s
-    join schedule sc on s.stadium_id = sc.stadium_id
-    join team t on s.hometeam_id = t.team_id
-    join player p on t.team_id = p.team_id
-where sc.sche_date = '20120317' and t.team_name='스틸러스' and p.position = 'GK';
+select new map(p.playerName as 선수이름,
+        p.position as 포지션,
+        concat(t.regionName,'[]',t.teamName) as 팀명,
+        s.stadiumName 스타디움,
+        sc.scheDate 경기날짜)
+from stadiums s
+    join schedules sc on s.stadiumId = sc.stadiumId.stadiumId
+    join teams t on s.hometeamId = t.teamId
+    join players p on t.teamId = p.teamId.teamId
+where sc.scheDate = '20120317' and t.teamName='스틸러스' and p.position = 'GK'
 """)
     public List<Map<String,String>> scheduleDay();
 

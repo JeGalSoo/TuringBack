@@ -4,7 +4,7 @@ import com.turing.api.player.model.PlayerDto;
 
 import java.util.List;
 
-public interface PlayerService {
+public interface PlayerService  {
     List<PlayerDto> findAllPosition();
 
     List<PlayerDto> findAllPositionincludeNull();
