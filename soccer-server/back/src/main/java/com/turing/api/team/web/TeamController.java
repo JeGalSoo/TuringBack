@@ -1,16 +1,15 @@
 package com.turing.api.team.web;
 
+import com.turing.api.team.repository.TeamRepository;
 import lombok.RequiredArgsConstructor;
 import java.util.List;
-
+import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.turing.api.team.model.TeamDto;
 import com.turing.api.team.service.TeamService;
-
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
@@ -18,24 +17,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-@ApiResponses(value = {
-    @ApiResponse(responseCode = "400", description = "Invalid ID supplied"),
-    @ApiResponse(responseCode = "404", description = "Customer not found") })
-@CrossOrigin(origins = "*", allowedHeaders = "*")
-@RestController
-@RequiredArgsConstructor
-@RequestMapping("/api/search/team")
 @Slf4j
-
+@RestController
+@ApiResponses({
+        @ApiResponse(responseCode = "200", description = "OK"),
+        @ApiResponse(responseCode = "400", description = "BAD REQUEST"),
+        @ApiResponse(responseCode = "404", description = "NOT FOUND"),
+        @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR")
+})
+@RequiredArgsConstructor
+@RequestMapping(path="/api/team")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TeamController {
 
- 
+    private final TeamRepository repository;
     private final TeamService service;
 
     @GetMapping("/sql1")
-    public ResponseEntity<List<?>> sql1() {
-        log.info("SQL 1 :");
-        return ResponseEntity.ok(service.sql1());
+    public List<Map<String,Object>> sql1() {
+        return repository.aaa();
     }
 
     @GetMapping("/sql10")

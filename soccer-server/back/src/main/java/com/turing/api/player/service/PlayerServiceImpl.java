@@ -8,16 +8,15 @@ import com.turing.api.team.repository.TeamRepository;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
+//
 import java.util.List;
-
-@Service
 @RequiredArgsConstructor
+@Service
 public class PlayerServiceImpl implements PlayerService {
-
-    private final PlayerRepository playerRepository;
-    private final TeamRepository teamRepository;
-
-
-
+//
+//    private final PlayerRepository playerRepository;
+//    private final TeamRepository teamRepository;
+//
+//
+//
 }

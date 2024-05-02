@@ -8,6 +8,7 @@ import com.turing.api.team.repository.TeamRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,14 +19,8 @@ public class TeamServiceImpl implements TeamService {
   private final TeamRepository repository;
 
   @Override
-  public List<?> sql1() {
-    log.info("gpgpz");
-
-    // List<TeamDto> list = repository.findAllTeam();
-    List<?> list = repository.findAll().stream()
-        .map(i->entityToDto(i))
-        .collect(Collectors.toList());
-    return list;
+  public List<Map<String,Object>> sql1() {
+    return repository.aaa();
     // return null;
   }
 
