@@ -22,9 +22,10 @@ public class StadiumRouter {
     public List<Map<String,Object>> execute(String q){
         return switch (q){
             case "1" -> repository.allList();
-            case "2" -> repository.teamAndRegion();
-            case "3" -> repository.homeAndAway();
-            case "4" -> repository.noWayHome();
+            case "11" -> repository.teamAndRegion();
+            case "15" -> repository.scheduleDay();
+            case "16" -> repository.homeAndAway();
+            case "17" -> repository.noWayHome();
             default->null;
         };
     }

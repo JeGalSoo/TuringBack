@@ -17,8 +17,8 @@ public class ScheduleRouter {
     public List<Map<String,Object>> execute(String q){
         log.info("Executing query: " + q);
         return switch (q){
-            case "1" -> repository.versus();
-            case "2" -> repository.matchSchedule();
+            case "14" -> repository.versus();
+            case "23" -> repository.matchSchedule();
             default->null;
         };
     }
