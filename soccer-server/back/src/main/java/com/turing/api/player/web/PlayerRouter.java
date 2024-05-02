@@ -27,8 +27,7 @@ public class PlayerRouter {
             case "8" -> repository.getPlayerNameAndHeigtAndWeightByRegion();
             case "9" -> repository.getPlayerNameAndHeigtAndWeightAndBMIByRegion();
             case "18" -> repository.getPlayer5Person();
-            case "21" -> repository.getPlayerBestShortHeigt5Person();
-
+            case "22" -> repository.getPlayerBestShortHeigt5Person();
             default -> null;
         };
     }
