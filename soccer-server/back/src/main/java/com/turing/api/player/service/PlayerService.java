@@ -4,16 +4,11 @@ import com.turing.api.player.model.PlayerDto;
 
 import java.util.List;
 
+<<<<<<< HEAD
 public interface PlayerService  {
     List<PlayerDto> findAllPosition();
+=======
+public interface PlayerService {
+>>>>>>> bkh
 
-    List<PlayerDto> findAllPositionincludeNull();
-
-    List<PlayerDto> findAllByPositionAndTeamID();
-
-    List<PlayerDto> findAllByPositionAndTeamName();
-
-    List<PlayerDto> findAllByPlayerNameAndHeightAndTeam();
-
-    List<PlayerDto> findAllByPlayerNameAndHeight();
 }
