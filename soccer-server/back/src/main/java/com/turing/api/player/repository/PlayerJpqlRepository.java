@@ -11,7 +11,7 @@ import java.util.Map;
 @Repository
 public interface PlayerJpqlRepository<Player> {
 
-    @Query("select distinct new map(p.position) from players p")
+    @Query("select distinct new map(p.position, p.playerName) from players p")
     List<Map<String, String>> getAllPosition();   //2
 
     @Query("select distinct new map(IFNULL(nullif(p.position,''),'newone'))from players p")
@@ -43,7 +43,7 @@ public interface PlayerJpqlRepository<Player> {
     List<Map<String, Object>> getAllByPlayerNameAndHeightAndTeamName(); //6
 
     @Query("""
-            SELECT p.playerName
+            SELECT new map(p.playerName)
             FROM players p
             WHERE p.position = 'GK' AND p.teamId.teamId =(SELECT t.teamId
             												FROM teams t
@@ -51,29 +51,44 @@ public interface PlayerJpqlRepository<Player> {
     List<Map<String, Object>> getAllByPositionAndRegion(); //7
 
 
-
     @Query("""
-SELECT new map(p.playerName , case when p.height=' ' then '0' else p.height end ,case when p.weight=' ' then '0' else p.weight end)
-FROM players p
-WHERE p.teamId.teamId = (SELECT t.teamId
-FROM teams t
-WHERE t.regionName = '서울')
-ORDER BY p.height DESC, p.weight DESC""")
+            SELECT new map(p.playerName , case when p.height=' ' then '0' else p.height end ,case when p.weight=' ' then '0' else p.weight end)
+            FROM players p
+            WHERE p.teamId.teamId = (SELECT t.teamId
+            FROM teams t
+            WHERE t.regionName = '서울')
+            ORDER BY p.height DESC, p.weight DESC""")
     List<Map<String, Object>> getPlayerNameAndHeigtAndWeightByRegion(); //8
 
     @Query("""
-SELECT p.playerName, p.position,
-case when p.height=' ' then '0' else concat(p.height,'cm') end,
-case when p.weight=' ' then '0' else concat(p.weight,'kg') end,
-case when round(cast(p.weight as int)/(cast( p.height as int)/100*cast(p.height as int)/100),0) =null then 'NONE'
-    else  round(cast(p.weight as int)/(cast(p.height as int)/100*cast(p.height as int) /100),0) end AS BMI
-FROM players p
-WHERE p.teamId.teamId =  (SELECT t.teamId
-						FROM teams t
-						WHERE t.regionName = '서울')
-ORDER BY p.playerName DESC""")
+            SELECT new map(p.playerName, p.position,
+                        case when p.height=' ' then '0' else concat(p.height,'cm') end,
+                        case when p.weight=' ' then '0' else concat(p.weight,'kg') end,
+                        case when round(cast(p.weight as DOUBLE)/ (cast( p.height as DOUBLE)/100*cast(p.height as DOUBLE )/100), 0) is null then 'NONE'
+                            else  round(cast(p.weight as DOUBLE)/(cast(p.height as DOUBLE )/100*cast(p.height as DOUBLE ) /100),0) end AS BMI)
+            FROM players p
+            WHERE p.teamId.teamId =  (SELECT t.teamId
+            						FROM teams t
+            						WHERE t.regionName = '서울')
+            ORDER BY p.playerName DESC""")
     List<Map<String, Object>> getPlayerNameAndHeigtAndWeightAndBMIByRegion(); //9
 
+    @Query("""
+            SELECT new map(p.id,p.playerName,p.position,p.weight,p.height,
+            p.teamId.teamId,p.backNo,p.birthDate,p.ePlayerName,p.joinYyyy,p.nation,p.nickname,p.playerId,p.solar)
+            FROM players p order by p.id desc LIMIT 5""")
+    List<Map<String, Object>> getPlayer5Person(); //18
+
+
+    @Query("""
+            SELECT new map(p.playerName, p.height, p.teamId.teamId)
+            FROM players p
+            WHERE cast(p.height as Double) <  cast((SELECT ROUND(AVG(cast(p2.height as Double)), 2)
+                              FROM players p2
+                              WHERE p2.teamId.teamId = p.teamId.teamId
+                              GROUP BY p2.teamId.teamId) as Double )
+            """)
+    List<Map<String, Object>> getPlayerBestShortHeigt5Person(); //22
 
 
 }
