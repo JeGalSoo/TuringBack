@@ -13,7 +13,7 @@ public interface TeamService {
         .regionName(dto.getRegionName())
         .teamName(dto.getTeamName())
         .eTeamName(dto.getETeamName())
-        .origYYYY(dto.getOrigYYYY())
+        .origYyyy(dto.getOrigYyyy())
         .zipCode1(dto.getZipCode1())
         .zipCode2(dto.getZipCode2())
         .address(dto.getAddress())
@@ -33,7 +33,7 @@ public interface TeamService {
         .regionName(ent.getRegionName())
         .teamName(ent.getTeamName())
         .eTeamName(ent.getETeamName())
-        .origYYYY(ent.getOrigYYYY())
+        .origYyyy(ent.getOrigYyyy())
         .zipCode1(ent.getZipCode1())
         .zipCode2(ent.getZipCode2())
         .address(ent.getAddress())
@@ -53,5 +53,4 @@ public interface TeamService {
     // List<TeamDto> findAllTeamByPositionNull();
     // List<TeamDto> findTeamAngHeightByRegionName();
     // List<TeamDto> findTeamByPosition();
-    // List<TeamDto> find5PlayerByHeight();
 }

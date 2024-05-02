@@ -10,6 +10,8 @@ import java.util.List;
 
 @Entity(name = "teams")
 @Data
+@Setter
+@Getter
 @Builder
 @ToString
 @AllArgsConstructor
@@ -28,7 +30,7 @@ public class Team extends BaseEntity {
     @Column(name = "e_team_name")
     private String eTeamName;
     @Column(name = "orig_yyyy")
-    private String origYYYY;
+    private String origYyyy;
     @Column(name = "zip_code1")
     private String zipCode1;
     @Column(name = "zip_code2")
