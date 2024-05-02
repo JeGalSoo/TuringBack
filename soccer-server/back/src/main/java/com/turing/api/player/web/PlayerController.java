@@ -9,12 +9,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @ApiResponses({
@@ -23,47 +21,25 @@ import java.util.List;
         @ApiResponse(responseCode = "200", description = "SUCCESS"),
 })
 @RequiredArgsConstructor
-@RequestMapping("/api/search/player")
+@RequestMapping("/api/player")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @Slf4j
 public class PlayerController {
 
-    private final PlayerService service;
+    private final PlayerRouter router;
+    private final PlayerService playerService;
 
-    @GetMapping( "/position-list")
-    public ResponseEntity<List<PlayerDto>> findAllPosition() {
-        log.info("입력받은 정보 : {}");
-        return ResponseEntity.ok(service.findAllPosition());
-    }
-
-    @GetMapping( "/position-list-includeNull")
-    public ResponseEntity<List<PlayerDto>> findAllPositionincludeNull() {
-        log.info("입력받은 정보 : {}");
-        return ResponseEntity.ok(service.findAllPositionincludeNull());
-    }
-
-    @GetMapping( "/findGK-SuwonTeamId")
-    public ResponseEntity<List<PlayerDto>> findAllByPositionAndTeamID() {
-        log.info("입력받은 정보 : {}");
-        return ResponseEntity.ok(service.findAllByPositionAndTeamID());
-    }
-
-    @GetMapping( "/findGK-SuwonTeamName")
-    public ResponseEntity<List<PlayerDto>> findAllByPositionAndTeamName() {
-        log.info("입력받은 정보 : {}");
-        return ResponseEntity.ok(service.findAllByPositionAndTeamName());
-    }
-
-    @GetMapping( "/findPlayer-Name-Height-team")
-    public ResponseEntity<List<PlayerDto>> findAllByPlayerNameAndHeightAndTeam() {
-        log.info("입력받은 정보 : {}");
-        return ResponseEntity.ok(service.findAllByPlayerNameAndHeightAndTeam());
-    }
-
-    @GetMapping( "/findPlayer-Name-Height")
-    public ResponseEntity<List<PlayerDto>> findAllByPlayerNameAndHeight() {
-        log.info("입력받은 정보 : {}");
-        return ResponseEntity.ok(service.findAllByPlayerNameAndHeight());
+    @GetMapping( "/search")
+    public ResponseEntity<List<Map<String,Object>>> searchPlayer(
+            @RequestParam(name = "q",required = true) String q,
+            @RequestParam(name = "playerName",required = false) String playerName,
+            @RequestParam(name = "position",required = false) String position,
+            @RequestParam(name = "teamId",required = false) String teamId
+    ) {
+        log.info("입력받은 정보 : {}",q);
+        List<Map<String,Object>> o = router.execute(q, playerName, position, teamId);
+        log.info("반환정보 : {}",o);
+        return ResponseEntity.ok(o);
     }
 
 
