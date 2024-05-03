@@ -9,12 +9,6 @@ import lombok.*;
 import java.util.List;
 
 @Entity(name = "teams")
-<<<<<<< HEAD
-=======
-@Data
-@Setter
-@Getter
->>>>>>> origin/main
 @Builder
 @Getter
 @ToString
