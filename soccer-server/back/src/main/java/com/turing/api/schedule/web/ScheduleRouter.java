@@ -14,7 +14,7 @@ public class ScheduleRouter {
     private final ScheduleRepository repository;
 
     @SuppressWarnings("unchecked")
-    public List<Map<String,Object>> execute(String q){
+    public List<?> execute(String q){
         log.info("Executing query: " + q);
         return switch (q){
             case "14" -> repository.versus();

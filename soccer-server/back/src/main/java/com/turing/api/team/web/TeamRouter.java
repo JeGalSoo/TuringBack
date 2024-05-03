@@ -22,7 +22,7 @@ public class TeamRouter {
     private final TeamRepository repository;
     private final TeamService service;
 
-    public List<Map<String, Object>> execute(String q, String position1, String regionName1, String regionName2) {
+    public List<?> execute(String q, String position1, String regionName1, String regionName2) {
         // List<Map<String, Team>> listmap = new ArrayList<>();
         // Map<String, Object> map = new HashMap<>();
         // Long key = Long.parseLong(q);

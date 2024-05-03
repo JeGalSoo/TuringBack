@@ -73,13 +73,13 @@ public class TeamController {
     // }
 
     @GetMapping("/search")
-    public ResponseEntity<List<Map<String, Object>>> searchTeam(
+    public ResponseEntity<List<?>> searchTeam(
             @RequestParam(value = "q", required = true) String q,
             @RequestParam(value = "position", required = false) String position1,
             @RequestParam(value = "regionName1", required = false) String regionName1,
             @RequestParam(value = "regionName2", required = false) String regionName2) {
         log.info("Controller searchTeam q : {}, position1 : {}, regionName1 : {}, regionName2 : {}", q,position1,regionName1,regionName2);
-        List<Map<String, Object>> list = router.execute(q, position1,regionName1,regionName2);
+        List<?> list = router.execute(q, position1,regionName1,regionName2);
        
         log.info("list size : {}",list.size());
         return ResponseEntity.ok(list);

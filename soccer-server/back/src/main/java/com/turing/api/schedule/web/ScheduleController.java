@@ -28,7 +28,7 @@ public class ScheduleController {
     private final ScheduleRouter router;
 
     @GetMapping(path = "/search")
-    public ResponseEntity<List<Map<String,Object>>> search(@RequestParam(value = "q", required = true) String q,
+    public ResponseEntity<List<?>> search(@RequestParam(value = "q", required = true) String q,
                                                            @RequestParam(value = "stadiumId", required = false)String stadiumId,
                                                            @RequestParam(value = "stadiumName", required = false)String stadiumName,
                                                            @RequestParam(value = "hometeamId", required = false)String hometeamId,
@@ -36,7 +36,7 @@ public class ScheduleController {
                                                            @RequestParam(value = "tel", required = false)String tel
     ){
         log.info("입력받은 정보 : {}",q);
-        List<Map<String,Object>> o = router.execute(q);
+        List<?> o = router.execute(q);
         return ResponseEntity.ok(o);
     }
 }

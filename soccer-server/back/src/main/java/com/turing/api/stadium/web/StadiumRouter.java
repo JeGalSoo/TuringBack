@@ -19,7 +19,7 @@ public class StadiumRouter {
     private final StadiumRepository repository;
 
     @SuppressWarnings("unchecked")
-    public List<Map<String,Object>> execute(String q){
+    public List<?> execute(String q){
         return switch (q){
             case "1" -> repository.allList();
             case "11" -> repository.teamAndRegion();

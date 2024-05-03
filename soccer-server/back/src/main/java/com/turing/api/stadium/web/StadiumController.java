@@ -47,7 +47,7 @@ public class StadiumController {
         return service.noWayHome();
     }
     @GetMapping(path = "/search")
-    public ResponseEntity<List<Map<String,Object>>> search(@RequestParam(value = "q", required = true) String q,
+    public ResponseEntity<List<?>> search(@RequestParam(value = "q", required = true) String q,
                                     @RequestParam(value = "scheDate", required = false)String scheDate,
                                     @RequestParam(value = "gubun", required = false)String gubun,
                                     @RequestParam(value = "hometeamId", required = false)String hometeamId,
@@ -56,7 +56,7 @@ public class StadiumController {
                                     @RequestParam(value = "awayScore", required = false)Integer awayScore
                                     ){
         log.info("입력받은 정보 : {}",q);
-        List<Map<String,Object>> o = router.execute(q);
+        List<?> o = router.execute(q);
         return ResponseEntity.ok(o);
     }
 

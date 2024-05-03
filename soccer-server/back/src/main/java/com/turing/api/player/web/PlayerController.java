@@ -30,14 +30,14 @@ public class PlayerController {
     private final PlayerService playerService;
 
     @GetMapping( "/search")
-    public ResponseEntity<List<Map<String,Object>>> searchPlayer(
+    public ResponseEntity<List<?>> searchPlayer(
             @RequestParam(name = "q",required = true) String q,
             @RequestParam(name = "playerName",required = false) String playerName,
             @RequestParam(name = "position",required = false) String position,
             @RequestParam(name = "teamId",required = false) String teamId
     ) {
         log.info("입력받은 정보 : {}",q);
-        List<Map<String,Object>> o = router.execute(q, playerName, position, teamId);
+        List<?> o = router.execute(q, playerName, position, teamId);
         log.info("반환정보 : {}",o);
         return ResponseEntity.ok(o);
     }
