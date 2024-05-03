@@ -23,12 +23,12 @@ public class PlayerDto {
     private String ePlayerName;
     private String joinYyyy;
     private String position;
-    private Integer backNo;
+    private String backNo;
     private String nation;
-    private Date birthDate;
+    private String birthDate;
     private String solar;
-    private Integer height;
-    private Integer weiget;
+    private String height;
+    private String weiget;
 
-    private Long teamId;
+    private String teamId;
 }

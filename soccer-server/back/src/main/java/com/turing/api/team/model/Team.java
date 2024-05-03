@@ -9,10 +9,8 @@ import lombok.*;
 import java.util.List;
 
 @Entity(name = "teams")
-@Data
-@Setter
-@Getter
 @Builder
+@Getter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

@@ -14,7 +14,7 @@ public class PlayerRouter {
 
     private final PlayerRepository repository;
 
-
+    @SuppressWarnings("unchecked")
     public List<?> execute(String q,String playerName,String position,String teamId ) {
         return switch (q) {
             case "2" -> repository.getAllPosition();
@@ -31,9 +31,4 @@ public class PlayerRouter {
             default -> null;
         };
     }
-
-
-
-
-
 }
