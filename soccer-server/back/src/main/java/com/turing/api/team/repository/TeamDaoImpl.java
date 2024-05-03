@@ -1,35 +1,59 @@
 package com.turing.api.team.repository;
 
 import java.util.List;
-import java.util.Map;
 
-import com.turing.api.team.model.Team;
-import com.turing.api.team.service.TeamService;
+import com.querydsl.jpa.impl.JPAQueryFactory;
+import com.turing.api.team.model.QTeam;
+import com.turing.api.team.model.TeamDto;
 
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 
-@PersistenceContext
 @RequiredArgsConstructor
 public class TeamDaoImpl implements TeamDao {
 
-    private final EntityManager em;
+    private final JPAQueryFactory factory;
 
     @Override
-    public Team find(Class<Team>  team, long l) {
-       return em.find(team, 1L);
-    }
+    public List<TeamDto> getAllTeams() {
+        factory.select(
+                QTeam.team.id,
+                QTeam.team.teamId,
+                QTeam.team.regionName,
+                QTeam.team.teamName,
+                QTeam.team.eTeamName,
+                QTeam.team.origYyyy,
+                QTeam.team.zipCode1,
+                QTeam.team.zipCode2,
+                QTeam.team.address,
+                QTeam.team.ddd,
+                QTeam.team.tel,
+                QTeam.team.fax,
+                QTeam.team.homepage,
+                QTeam.team.owner,
+                QTeam.team.stadiumId.id)
+                .from(QTeam.team)
+                .fetch()
+                .stream()
+                .map(tuple -> TeamDto.builder()
+                        .id(tuple.get(QTeam.team.id))
+                        .teamId(tuple.get(QTeam.team.teamId))
+                        .regionName(tuple.get(QTeam.team.regionName))
+                        .teamName(tuple.get(QTeam.team.teamName))
+                        .eTeamName(tuple.get(QTeam.team.eTeamName))
+                        .origYyyy(tuple.get(QTeam.team.origYyyy))
+                        .zipCode1(tuple.get(QTeam.team.zipCode1))
+                        .zipCode2(tuple.get(QTeam.team.zipCode2))
+                        .address(tuple.get(QTeam.team.address))
+                        .ddd(tuple.get(QTeam.team.ddd))
+                        .tel(tuple.get(QTeam.team.tel))
+                        .fax(tuple.get(QTeam.team.fax))
+                        .homepage(tuple.get(QTeam.team.homepage))
+                        .owner(tuple.get(QTeam.team.owner))
+                        .stadiumId(tuple.get(QTeam.team.stadiumId.id)).build())
+                .toList();
 
-    @Override
-    public void insert(Team team) {
-       em.persist(team);
-    }
-
-    @Override
-    public void update(Team team) {
-        em.persist(team);
+        return null;
     }
 
 }
-
