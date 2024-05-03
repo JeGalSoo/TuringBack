@@ -1,19 +1,15 @@
 package com.turing.api.team.repository;
 
+import com.turing.api.player.model.Player;
+import com.turing.api.player.repository.PlayerJpqlRepository;
+import com.turing.api.player.service.PalayerDao;
 import com.turing.api.team.model.Team;
-import com.turing.api.team.model.TeamDto;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 
 @Repository
-public interface TeamRepository extends JpaRepository<Team,Long> {
+public interface TeamRepository extends JpaRepository<Team, Long> , TeamJpqlRepository {
 
 
 
