@@ -1,5 +1,10 @@
 package com.turing.api.stadium.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
+@AllArgsConstructor
+@Builder
 public class StadiumDto {
     private Long id;
     private String stadiumId;

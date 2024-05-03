@@ -1,23 +1,23 @@
 package com.turing.api.player.repository;
 
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.turing.api.player.model.Player;
+import com.turing.api.player.model.PlayerDto;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 
-@PersistenceContext
-@RequiredArgsConstructor
+
 public class PlayerDAOImpl implements PlayerDAO {
 
-    private final EntityManager entityManager;
 
     @Override
     public Player p(Long id) {
-
-        return entityManager.find(Player.class,id);
+        return null;
     }
 
     @Override
