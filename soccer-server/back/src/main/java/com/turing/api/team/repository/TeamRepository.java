@@ -10,11 +10,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface TeamRepository extends JpaRepository<Team,Long> {
 
-    
+
+
     // @Query(value = "SELECT * FROM teams t ORDER BY t.team_name", nativeQuery=true)
     // @Query(value = "SELECT * FROM teams ", nativeQuery=true)
     // List<TeamDto> findAll();
@@ -44,7 +46,7 @@ public interface TeamRepository extends JpaRepository<Team,Long> {
 //     @Query("SELECT (SELECT team_name FROM teams t WHERE p.team_id = t.team_id) AS team_name, player_name," +
 //                 "backNo from players p WHERE position :=position")
 //     List<Team> sql20(@Param("position") String position);
-    
+
 //     @Query("SELECT (select team_name FROM teams t WHERE p.team_id=t.team_id) '소속팀명', player_name '선수명',back_no '백넘버'" +
 //             "FROM players p ORDER BY height DESC LIMIT 5;")
 //     List<Team> sql21();

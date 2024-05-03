@@ -61,11 +61,12 @@ public interface PlayerJpqlRepository<Player> {
     List<Map<String, Object>> getPlayerNameAndHeigtAndWeightByRegion(); //8
 
     @Query("""
-            SELECT new map(p.playerName, p.position,
+            SELECT p.playerName, p.position,
                         case when p.height=' ' then '0' else concat(p.height,'cm') end,
                         case when p.weight=' ' then '0' else concat(p.weight,'kg') end,
-                        case when round(cast(p.weight as DOUBLE)/ (cast( p.height as DOUBLE)/100*cast(p.height as DOUBLE )/100), 0) is null then 'NONE'
-                            else  round(cast(p.weight as DOUBLE)/(cast(p.height as DOUBLE )/100*cast(p.height as DOUBLE ) /100),0) end AS BMI)
+                        case when round(cast(p.weight as DOUBLE )/ (cast( p.height as DOUBLE )/100*cast(p.height as DOUBLE )/100), 0) is null
+                                 then 'NONE'
+                            else  round(cast(p.weight as DOUBLE )/(cast(p.height as DOUBLE )/100*cast(p.height as DOUBLE ) /100),0) end AS BMI
             FROM players p
             WHERE p.teamId.teamId =  (SELECT t.teamId
             						FROM teams t
