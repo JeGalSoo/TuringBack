@@ -22,8 +22,8 @@ public class DemoApplication {
 //
 //
 //    @Bean
-//    JpaQueryFactory jpaQueryMethodFactory(EntityManager manager) {
-//        return new JpaQueryMethodFactory(manager);
+//    JpaQueryFactory jpaQueryFactory(EntityManager manager) {
+//        return new JpaQueryFactory(manager);
 //    }
 
 }
