@@ -11,17 +11,20 @@ import java.util.Map;
 @Repository
 public interface PlayerJpqlRepository<Player> {
 
-    @Query("select distinct new map(p.position, p.playerName) from players p")
+    @Query("select distinct new map(p.position) from players p")
     List<Map<String, String>> getAllPosition();   //2
 
-    @Query("select distinct new map(IFNULL(nullif(p.position,''),'newone'))from players p")
+    @Query("select distinct new map(IFNULL(nullif(p.position,''),'newone'))" +
+            "from players p")
     List<Map<String, Object>> getAllPositionincludeNull();  //3
 
-    @Query("SELECT new map(p.playerName) FROM players p WHERE p.position = 'GK' AND p.teamId.teamId = 'K02'")
+    @Query("SELECT new map(p.playerName) FROM players p WHERE p.position = 'GK' " +
+            "AND p.teamId.teamId = 'K02'")
     List<Map<String, Object>> getAllByPositionAndTeamId();  //4
 
 
-    @Query("SELECT new map(p.playerName) FROM players p WHERE p.playerName LIKE '고%' AND p.height >= '170' AND" +
+    @Query("SELECT new map(p.playerName) FROM players p " +
+            "WHERE p.playerName LIKE '고%' AND p.height >= '170' AND" +
             " p.teamId =(SELECT t FROM teams t WHERE t.regionName = '수원')")
     List<Map<String, Object>> getAllByPlayerNameAndHeightAndRegion();  //5-1
 
