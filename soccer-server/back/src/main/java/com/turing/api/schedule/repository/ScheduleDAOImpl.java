@@ -3,6 +3,7 @@ package com.turing.api.schedule.repository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.turing.api.schedule.model.QSchedule;
+import com.turing.api.schedule.model.QScheduleDto;
 import com.turing.api.schedule.model.ScheduleDto;
 import lombok.RequiredArgsConstructor;
 
@@ -11,13 +12,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ScheduleDAOImpl implements ScheduleDAO{
 
-    private final JPAQueryFactory factory;
+    private final JPAQueryFactory queryFactory;
+    private final QSchedule schedule = QSchedule.schedule;
 
     @Override
-    public List<ScheduleDto> getAllSchedules() {
-
-
-        return factory.select(QSchedule.schedule.id,
+    public List<ScheduleDto> getAllSchedulesDSL() {
+        return queryFactory.select(QSchedule.schedule.id,
                         QSchedule.schedule.scheDate,
                         QSchedule.schedule.awayScore,
                         QSchedule.schedule.awayteamId,
@@ -39,5 +39,16 @@ public class ScheduleDAOImpl implements ScheduleDAO{
                         .stadiumId(tuple.get(QSchedule.schedule.stadiumId.stadiumId))
                         .build())
                 .toList();
+//        return queryFactory.select(
+//                new QScheduleDto(
+//                        schedule.id,
+//                        schedule.scheDate,
+//                        schedule.gubun,
+//                        schedule.hometeamId,
+//                        schedule.awayteamId,
+//                        schedule.homeScore,
+//                        schedule.awayScore))
+//                .from(QSchedule.schedule)
+//                .fetch();
     }
 }

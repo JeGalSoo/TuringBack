@@ -9,7 +9,7 @@ import java.util.List;
 
 @SuppressWarnings("rawtypes")
 @Repository
-public interface StadiumRepository extends JpaRepository<Stadium,Long>, StadiumJpqlRepository {
+public interface StadiumRepository extends JpaRepository<Stadium,Long>, StadiumJpqlRepository,StadiumDao {
 
 
 }
