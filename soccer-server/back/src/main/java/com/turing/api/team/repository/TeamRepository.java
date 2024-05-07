@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface TeamRepository extends JpaRepository<Team, Long> , TeamJpqlRepository {
+public interface TeamRepository extends JpaRepository<Team, Long> , TeamJpqlRepository,TeamDao{
 
 
 

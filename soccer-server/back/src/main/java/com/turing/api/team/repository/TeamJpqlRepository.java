@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import com.turing.api.team.model.Team;
@@ -58,19 +59,17 @@ public interface TeamJpqlRepository extends JpaRepository<Team, Long> {
     // 인천 유나이티스팀의 평균키 -- 176.59
     // 키와 몸무게가 없는 칸은 0 값으로 처리한 후 평균값에 포함되지 않도록 하세요.
     @Query("""
-        select new map(t.teamId,t.teamName ,round(avg(cast(p.height as double) ),2))
-                                                 from teams t
-                                                          join players p on t.teamId = p.teamId.teamId
-                                                 where p.height!=' '
-                                                 group by t.teamId,t.teamName
-                                                 having avg(cast(p.height as double))< cast((select (avg(cast(p.height as double)))
-                                                                                            from teams t
-                                                                                            join players p on t.teamId = p.teamId.teamId
-                                                                                            where t.regionName='인천') as double )
-                                                                       """)
-    List<Map<String,Object>> findTeamAngHeightByRegionName(String regionName1);
+            select new map(t.teamId,t.teamName ,round(avg(cast(p.height as double) ),2))
+            from teams t join players p on t.teamId = p.teamId.teamId
+            where p.height!=' '
+            group by t.teamId,t.teamName
+            having avg(cast(p.height as double))< cast((select (avg(cast(p.height as double)))
+            from teams t join players p on t.teamId = p.teamId.teamId
+            where t.regionName='인천') as double )
+            """)
+    List<Map<String, Object>> findTeamAngHeightByRegionName(String regionName1);
 
-    // 20 포지션이 MF 인 선수들의 소속팀명 및 선수명, 백넘버 출력
+        // 20 포지션이 MF 인 선수들의 소속팀명 및 선수명, 백넘버 출력
     @Query("""
             SELECT
             new map(

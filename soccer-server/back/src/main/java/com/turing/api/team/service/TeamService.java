@@ -42,8 +42,8 @@ public interface TeamService {
         .fax(ent.getFax())
         .homepage(ent.getHomepage())
         .owner(ent.getOwner())
-        .modDate(String.valueOf(ent.getModDate()))
-        .regDate(String.valueOf(ent.getRegDate()))
+//        .modDate(String.valueOf(ent.getModDate()))
+//        .regDate(String.valueOf(ent.getRegDate()))
         .build();
     }
     

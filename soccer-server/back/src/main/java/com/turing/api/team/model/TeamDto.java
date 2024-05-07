@@ -1,5 +1,6 @@
 package com.turing.api.team.model;
 
+import com.querydsl.core.annotations.QueryProjection;
 import org.springframework.stereotype.Component;
 
 import lombok.AllArgsConstructor;
@@ -11,7 +12,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class TeamDto {
     private Long id;
     private String teamId;
@@ -28,6 +28,25 @@ public class TeamDto {
     private String homepage;
     private String owner;
     private Long stadiumId;
-    private String modDate;
-    private String regDate;
+
+    @QueryProjection
+    public TeamDto(Long id, String teamId, String regionName, String teamName, String eTeamName, String origYyyy, String zipCode1, String zipCode2, String address, String ddd, String tel, String fax, String homepage, String owner, Long stadiumId) {
+        this.id = id;
+        this.teamId = teamId;
+        this.regionName = regionName;
+        this.teamName = teamName;
+        this.eTeamName = eTeamName;
+        this.origYyyy = origYyyy;
+        this.zipCode1 = zipCode1;
+        this.zipCode2 = zipCode2;
+        this.address = address;
+        this.ddd = ddd;
+        this.tel = tel;
+        this.fax = fax;
+        this.homepage = homepage;
+        this.owner = owner;
+        this.stadiumId = stadiumId;
+    }
+
+
 }

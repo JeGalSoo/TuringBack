@@ -29,13 +29,22 @@ public class TeamRouter {
 
         // map.put(q,
         return switch (q) {
-            case "1" -> repository.findAllTeams();
-            case "10" -> repository.findTeamByPosionAndRegionName(position1,regionName1, regionName2);
-            case "12" -> repository.findTeamByPlayerHeightAndRegionName(regionName1, regionName2);
-            case "13"->repository.findAllTeamByPositionNull();
-            case "19"->repository.findTeamAngHeightByRegionName(regionName1);
-            case "20"->repository.findTeamByPosition(position1);
-            case "21"->repository.find5PlayerByHeight();
+            case "119" -> repository.getAllTeamsDsl();
+            case "1" -> repository.getNo1Dsl();
+            case "10" -> repository.getNo10Dsl(position1,regionName1, regionName2);
+            case "12" -> repository.getNo12Dsl(regionName1, regionName2); //
+            case "13"->repository.getNo13Dsl();
+            case "19"->repository.getNo19Dsl(regionName1); //
+            case "20"->repository.getNo20Dsl(position1); //
+            case "21"->repository.getNo21Dsl(); //
+
+            case "31" -> repository.findAllTeams();
+            case "310" -> repository.findTeamByPosionAndRegionName(position1,regionName1, regionName2);
+            case "312" -> repository.findTeamByPlayerHeightAndRegionName(regionName1, regionName2);
+            case "313"->repository.findAllTeamByPositionNull();
+            case "319"->repository.findTeamAngHeightByRegionName(regionName1);
+            case "320"->repository.findTeamByPosition(position1);
+            case "321"->repository.find5PlayerByHeight();
             default -> null;
         }
         // )
