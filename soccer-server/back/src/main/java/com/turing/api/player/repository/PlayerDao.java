@@ -24,6 +24,7 @@ public interface PlayerDao {
     List<PlayerDto> getNo18Dsl();
     List<PlayerDto> getNo22Dsl();
 
+    Long countAllPlayers();
 
 
 

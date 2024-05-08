@@ -22,12 +22,12 @@ public class PlayerRouter {
             case "4" -> repository.getNo4Dsl();
             case "5" -> repository.getNo5Dsl();
             case "5-1" -> repository.getNo5HM1Dsl();
-            case "6" -> repository.getAllByPlayerNameAndHeightAndTeamName();
-            case "7" -> repository.getAllByPositionAndRegion();
-            case "8" -> repository.getPlayerNameAndHeigtAndWeightByRegion();
-            case "9" -> repository.getPlayerNameAndHeigtAndWeightAndBMIByRegion();
-            case "18" -> repository.getPlayer5Person();
-            case "22" -> repository.getPlayerBestShortHeigt5Person();
+            case "6" -> repository.getNo6Dsl();
+            case "7" -> repository.getNo7Dsl();
+            case "8" -> repository.getNo8Dsl();
+            case "9" -> repository.getNo9Dsl();
+            case "18" -> repository.getNo18Dsl();
+            case "22" -> repository.getNo22Dsl();
             default -> null;
         };
     }

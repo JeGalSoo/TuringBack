@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 import java.util.Map;
 
-
 @RequiredArgsConstructor
 public class PlayerDaoImpl implements PlayerDao {
 
@@ -61,7 +60,6 @@ public class PlayerDaoImpl implements PlayerDao {
                                         .otherwise(player.position).as("position")))
                 .from(player)
                 .fetch();
-//        return null;
 
     }
 
@@ -124,7 +122,7 @@ public class PlayerDaoImpl implements PlayerDao {
                         player.playerName
                 ).from(player)
                 .where(player.teamId.regionName.eq("서울"))
-                .fetch().stream().map(i -> Map.of("playerName",i.get(player.playerName),
+                .fetch().stream().map(i -> Map.of("playerName", i.get(player.playerName),
                         "키", i.get(ExpressionUtils.as(player.height.coalesce("0"), "키")),
                         "몸무게", i.get(ExpressionUtils.as(player.weight.coalesce("0"), "몸무게"))
                 )).toList();
@@ -137,13 +135,48 @@ public class PlayerDaoImpl implements PlayerDao {
 
     @Override
     public List<PlayerDto> getNo18Dsl() {
-        return null;
+        return factory.select( new QPlayerDto(
+                        player.id,
+                        player.playerId,
+                        player.ePlayerName,
+                        player.playerName,
+                        player.joinYyyy,
+                        player.position,
+                        player.backNo,
+                        player.nickname,
+                        player.nation,
+                        player.birthDate,
+                        player.solar,
+                        player.height,
+                        player.weight,
+                        player.teamId.teamId))
+                .from(player)
+                .orderBy(player.id.desc()).limit(5)
+                .fetch();
     }
 
     @Override
     public List<PlayerDto> getNo22Dsl() {
-        return null;
+//        Double avg = factory.select(player.height)
+//                .from(player)
+//                .where(player.teamId.teamId.eq())
+//                .fetch();
+//
+//
+//        return factory.select(
+//                        new QPlayerDto(player.playerName,player.height,player.teamId.teamId))
+//                .from(player)
+//                .where(player.height.castToNum(Double.class) < player.height.castToNum(Double.class))
+    return null;
+    }
+
+    @Override
+    public Long countAllPlayers() {
+        return factory.select(player.count())
+                .from(player)
+                .fetchOne();
     }
 
 
 }
+

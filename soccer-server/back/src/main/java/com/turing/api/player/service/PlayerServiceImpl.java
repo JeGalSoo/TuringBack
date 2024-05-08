@@ -13,6 +13,12 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class PlayerServiceImpl implements PlayerService {
+    private final PlayerRepository repository;
+
+    @Override
+    public Long countAllPlayers() {
+        return repository.countAllPlayers();
+    }
 //
 //    private final PlayerRepository playerRepository;
 //    private final TeamRepository teamRepository;
