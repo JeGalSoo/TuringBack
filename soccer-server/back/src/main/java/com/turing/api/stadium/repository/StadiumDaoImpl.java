@@ -1,7 +1,6 @@
 package com.turing.api.stadium.repository;
 
 import com.querydsl.core.Tuple;
-import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.turing.api.player.model.QPlayer;
 import com.turing.api.schedule.model.QSchedule;
@@ -57,9 +56,7 @@ public class StadiumDaoImpl implements StadiumDao{
     public List<Long> No1Dsl() {
         return queryFactory.select(
                 stadium.count())
-                .from(QStadium.stadium)
-                .join(QStadium.stadium.teams,QTeam.team)
-                .join(QStadium.stadium.schedules, QSchedule.schedule)
+                .from(stadium)
                 .fetch();
     }
 
@@ -68,7 +65,8 @@ public class StadiumDaoImpl implements StadiumDao{
         return queryFactory.select(
                 QTeam.team.regionName.concat(" ").concat(QTeam.team.teamName).concat(" ").concat(QStadium.stadium.stadiumName).as("teamName"))
                 .from(QStadium.stadium)
-                .join(QStadium.stadium.teams,QTeam.team)
+                .join(QTeam.team)
+                .on(stadium.stadiumId.eq(String.valueOf(QTeam.team.stadiumId)))
                 .fetch();
     }
 
@@ -83,7 +81,8 @@ public class StadiumDaoImpl implements StadiumDao{
                                 .from(QTeam.team)
                                 .where(QTeam.team.teamId.eq(QSchedule.schedule.awayteamId).as("away"))))
                 .from(stadium)
-                .join(stadium.schedules,QSchedule.schedule)
+                .join(QSchedule.schedule)
+                .on(stadium.stadiumId.eq(String.valueOf(QTeam.team.stadiumId)))
                 .where(QSchedule.schedule.homeScore.subtract(QSchedule.schedule.awayScore).goe(3))
                 .fetch();
     }
@@ -95,8 +94,8 @@ public class StadiumDaoImpl implements StadiumDao{
                 QTeam.team.regionName.concat("[]").concat(QTeam.team.teamName).as("팀명"),
                 stadium.stadiumName.as("스타디움"),QSchedule.schedule.scheDate.as("경기날짜"))
                 .from(stadium)
-                .join(stadium.schedules,QSchedule.schedule)
-                .join(stadium.teams,QTeam.team)
+                .join(QSchedule.schedule)
+                .on(stadium.stadiumId.eq(String.valueOf(QSchedule.schedule.stadiumId)))
                 .where(QSchedule.schedule.scheDate.eq("20120317").and(QTeam.team.teamName.eq("스틸러스")).and(QPlayer.player.position.eq("GK")))
                 .fetch();
     }
@@ -104,6 +103,14 @@ public class StadiumDaoImpl implements StadiumDao{
     @Override
     public List<StadiumDto> No17Dsl() {
         return null;
+    }
+
+    @Override
+    public List<Long> countAllStadiums() {
+        return queryFactory.select(
+                        stadium.count())
+                .from(stadium)
+                .fetch();
     }
 
 

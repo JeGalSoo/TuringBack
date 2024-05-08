@@ -33,4 +33,9 @@ public class StadiumServiceImpl implements StadiumService{
     public ResponseEntity<Messenger> noWayHome() {
         return null;
     }
+
+    @Override
+    public Long countAllStadiums() {
+        return repository.count();
+    }
 }

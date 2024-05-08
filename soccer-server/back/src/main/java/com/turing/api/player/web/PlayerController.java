@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.query.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,7 +44,6 @@ public class PlayerController {
         log.info("MY-INFO : Controller searchPlayer page is {}", pageable.getPageNumber());
         log.info("MY-INFO : Controller searchPlayer limit is {}", pageable.getPageSize());
         log.info("MY-INFO : Controller searchPlayer sortField is {}", pageable.getSort().toString());
-
         // nowPage, rowCount, pageSize, blockSize 외부주입.. count, size 1 부터, number 는 0부터
 
         int totalCount = 2340;

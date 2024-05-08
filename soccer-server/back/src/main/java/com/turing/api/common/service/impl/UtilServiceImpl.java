@@ -1,4 +1,6 @@
-package com.turing.api.common.service;
+package com.turing.api.common.service.impl;
+
+import com.turing.api.common.service.UtilService;
 
 public class UtilServiceImpl implements UtilService {
     private static UtilService instance = new UtilServiceImpl();

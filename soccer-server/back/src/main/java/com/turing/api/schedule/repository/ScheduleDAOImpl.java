@@ -3,7 +3,6 @@ package com.turing.api.schedule.repository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import com.turing.api.schedule.model.QSchedule;
-import com.turing.api.schedule.model.QScheduleDto;
 import com.turing.api.schedule.model.ScheduleDto;
 import lombok.RequiredArgsConstructor;
 

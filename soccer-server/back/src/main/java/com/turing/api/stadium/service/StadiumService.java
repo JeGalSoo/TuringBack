@@ -4,7 +4,8 @@ import com.turing.api.enums.Messenger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-@Service
+import java.util.List;
+
 public interface StadiumService {
     ResponseEntity<Integer> allList();
 
@@ -13,4 +14,6 @@ public interface StadiumService {
     ResponseEntity<Messenger> homeAndAway();
 
     ResponseEntity<Messenger> noWayHome();
+
+    Long countAllStadiums();
 }

@@ -22,6 +22,7 @@ public class StadiumRouter {
             case "16" -> repository.No15Dsl();
             case "17" -> repository.No16Dsl();
             case "18" -> repository.No17Dsl();
+            case "countAllStadiums" -> repository.countAllStadiums();
             default->null;
         };
     }

@@ -1,7 +1,6 @@
 package com.turing.api.stadium.repository;
 
 import com.querydsl.core.Tuple;
-import com.querydsl.jpa.impl.JPAQuery;
 import com.turing.api.stadium.model.Stadium;
 import com.turing.api.stadium.model.StadiumDto;
 
@@ -24,4 +23,6 @@ public interface StadiumDao {
     List<Tuple> No16Dsl();
 
     List<StadiumDto> No17Dsl();
+
+    List<Long> countAllStadiums();
 }
