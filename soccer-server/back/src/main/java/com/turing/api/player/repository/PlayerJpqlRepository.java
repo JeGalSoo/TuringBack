@@ -55,7 +55,8 @@ public interface PlayerJpqlRepository<Player> {
 
 
     @Query("""
-            SELECT new map(p.playerName , case when p.height=' ' then '0' else p.height end ,case when p.weight=' ' then '0' else p.weight end)
+            SELECT new map(p.playerName , case when p.height=' ' then '0' 
+            else p.height end ,case when p.weight=' ' then '0' else p.weight end)
             FROM players p
             WHERE p.teamId.teamId = (SELECT t.teamId
             FROM teams t

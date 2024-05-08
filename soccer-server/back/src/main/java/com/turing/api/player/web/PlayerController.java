@@ -46,33 +46,41 @@ public class PlayerController {
         log.info("MY-INFO : Controller searchPlayer sortField is {}", pageable.getSort().toString());
         // nowPage, rowCount, pageSize, blockSize 외부주입.. count, size 1 부터, number 는 0부터
 
-        int totalCount = 2340;
-        int pageCount = 0;
-        int blockCount = 0;
+//        int totalCount = Integer.parseInt(String.valueOf(playerService.countAllPlayers()));
+        int totalCount = 455;
+        int pageSize = 10;
+        int BLOCK_SIZE = 10;
+
         int startRow = 0;
         int endRow = 0;
-        int blockNum = 0;
+
         int startPage = 0;
         int endPage = 0;
-        int pageSize = 10;
-        int pageNum = 1;
-        int BLOCK_SIZE = 10;
-        boolean existPrev = false;
-        boolean existNext = false;
+
         int nextBlock = 0;
         int prevBlock = 0;
 
-        pageCount = (totalCount % pageSize != 0) ? (totalCount / pageSize)+1 : totalCount / pageSize;
+        int pageNum = 40;
+        int blockNum = (pageNum+pageSize)%pageSize ==0 ? ((pageNum+pageSize)/pageSize)-1 :(pageNum+pageSize)/pageSize ;
+
+        int blockCount = 0;
+        int pageCount = 0;
+
+        boolean existPrev = false;
+        boolean existNext = false;
+
+        blockCount = totalCount % (pageSize*BLOCK_SIZE) == 0 ? totalCount/(pageSize*BLOCK_SIZE) : (totalCount/(pageSize*BLOCK_SIZE))+1;
+        pageCount = totalCount % pageSize == 0 ? totalCount/pageSize : (totalCount/pageSize)+1;;
         startRow = (pageNum-1)*pageSize;
-        endRow = (pageNum==pageCount) ? totalCount -1 : startRow + pageSize -1;
-        blockCount = (pageCount % BLOCK_SIZE != 0) ? (pageCount / BLOCK_SIZE)+1 : pageCount / BLOCK_SIZE;
-        blockNum = (pageNum - 1) / BLOCK_SIZE;
-        startPage = blockNum * BLOCK_SIZE + 1;
-        endPage = ((blockNum + 1) != blockCount) ? startPage + (BLOCK_SIZE -1) : pageCount;
-        existPrev = blockNum != 0;
-        existNext = (blockNum + 1) != blockCount;
-        nextBlock = startPage + BLOCK_SIZE;
-        prevBlock = startPage - BLOCK_SIZE;
+        endRow = pageNum != pageCount ? startRow+pageSize-1 : startRow + (totalCount % pageSize);
+
+        startPage = (blockNum-1)*BLOCK_SIZE+1;
+        endPage = blockNum != blockCount ? startPage+BLOCK_SIZE-1 : startPage +(totalCount % (pageSize*BLOCK_SIZE))%10 ;
+
+        existPrev = blockNum == 1 ? false : true;
+        existNext = blockNum == blockCount ? false : true;
+        nextBlock = blockNum+1;
+        prevBlock = blockNum-1;
 
 
         log.info("MY-INFO : Controller searchPlayer totalCount is {}", totalCount);
