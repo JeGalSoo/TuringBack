@@ -17,11 +17,11 @@ public class PlayerRouter {
     @SuppressWarnings("unchecked")
     public List<?> execute(String q,String playerName,String position,String teamId ) {
         return switch (q) {
-            case "2" -> repository.getAllPosition();
-            case "3" -> repository.getAllPositionincludeNull();
-            case "4" -> repository.getAllByPositionAndTeamId();
-            case "5" -> repository.getAllByPlayerNameAndHeightAndTeamId();
-            case "5-1" -> repository.getAllByPlayerNameAndHeightAndRegion();
+            case "position-list" -> repository.getNo2Dsl();
+            case "3" -> repository.getNo3Dsl();
+            case "4" -> repository.getNo4Dsl();
+            case "5" -> repository.getNo5Dsl();
+            case "5-1" -> repository.getNo5HM1Dsl();
             case "6" -> repository.getAllByPlayerNameAndHeightAndTeamName();
             case "7" -> repository.getAllByPositionAndRegion();
             case "8" -> repository.getPlayerNameAndHeigtAndWeightByRegion();
