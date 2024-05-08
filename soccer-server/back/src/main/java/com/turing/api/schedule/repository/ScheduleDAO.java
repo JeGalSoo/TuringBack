@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface ScheduleDAO {
 
-    List<ScheduleDto> getAllSchedules();
+    List<ScheduleDto> getAllSchedulesDSL();
 
 }
