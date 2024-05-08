@@ -26,4 +26,6 @@ public interface TeamDao {
 
     List<?> getNo21Dsl();
 
+    Long countAllTeams();
+
 }

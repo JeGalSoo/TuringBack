@@ -53,4 +53,6 @@ public interface TeamService {
     // List<TeamDto> findAllTeamByPositionNull();
     // List<TeamDto> findTeamAngHeightByRegionName();
     // List<TeamDto> findTeamByPosition();
+
+    Long countAllTeams();
 }

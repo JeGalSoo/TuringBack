@@ -8,9 +8,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 
-public interface TeamRepository extends JpaRepository<Team, Long> , TeamJpqlRepository,TeamDao{
-
-
+public interface TeamRepository extends JpaRepository<Team, Long>, TeamJpqlRepository, TeamDao {
 
     // @Query(value = "SELECT * FROM teams t ORDER BY t.team_name", nativeQuery=true)
     // @Query(value = "SELECT * FROM teams ", nativeQuery=true)
