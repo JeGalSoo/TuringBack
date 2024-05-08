@@ -46,5 +46,4 @@ public class StadiumController {
         box.setList(o);
         return ResponseEntity.ok(o);
     }
-
 }

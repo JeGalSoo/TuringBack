@@ -52,24 +52,25 @@ public class PageServiceImpl implements PageService {
         pageDTO.setStartPage((blockNumber-1)*BLOCK_SIZE+1);
         pageDTO.setEndPage(blockNumber != pageDTO.getBlockCount() ? startPage+BLOCK_SIZE-1 : startPage +(totalCount % (pageSize*BLOCK_SIZE))%10) ;
 
-        pageDTO.setExistPrev(blockNumber != 1);
-        pageDTO.setExistNext(blockNumber != pageDTO.getBlockCount());
+        existPrev=(blockNumber != 1);
+        existNext=(blockNumber != pageDTO.getBlockCount());
         pageDTO.setNextBlock(blockNumber+1);
         pageDTO.setPrevBlock(blockNumber-1);
-
+        pageDTO.setExistPrev(existPrev);
+        pageDTO.setExistNext(existNext);
         
 
-        log.info("MY-INFO : Controller searchPlayer totalCount is {}", totalCount);
-        log.info("MY-INFO : Controller searchPlayer pageCount is {}", pageCount);
-        log.info("MY-INFO : Controller searchPlayer blockCount is {}", blockCount);
-        log.info("MY-INFO : Controller searchPlayer startRow is {}", startRow);
-        log.info("MY-INFO : Controller searchPlayer endRow is {}", endRow);
-        log.info("MY-INFO : Controller searchPlayer startPage is {}", startPage);
-        log.info("MY-INFO : Controller searchPlayer endPage is {}", endPage);
-        log.info("MY-INFO : Controller searchPlayer nextBlock is {}", nextBlock);
-        log.info("MY-INFO : Controller searchPlayer prevBlock is {}", prevBlock);
-        log.info("MY-INFO : Controller searchPlayer blockNumber is {}", blockNumber);
-        log.info("MY-INFO : Controller searchPlayer pageNumber is {}", pageNumber);
+        log.info("MY-INFO : Controller searchPlayer totalCount is {}", pageDTO.getTotalCount());
+        log.info("MY-INFO : Controller searchPlayer pageCount is {}", pageDTO.getPageCount());
+        log.info("MY-INFO : Controller searchPlayer blockCount is {}", pageDTO.getBlockCount());
+        log.info("MY-INFO : Controller searchPlayer startRow is {}", pageDTO.getStartRow());
+        log.info("MY-INFO : Controller searchPlayer endRow is {}", pageDTO.getEndRow());
+        log.info("MY-INFO : Controller searchPlayer startPage is {}", pageDTO.getStartPage());
+        log.info("MY-INFO : Controller searchPlayer endPage is {}", pageDTO.getEndPage());
+        log.info("MY-INFO : Controller searchPlayer nextBlock is {}", pageDTO.getNextBlock());
+        log.info("MY-INFO : Controller searchPlayer prevBlock is {}", pageDTO.getPrevBlock());
+        log.info("MY-INFO : Controller searchPlayer blockNumber is {}", pageDTO.getBlockNumber());
+        log.info("MY-INFO : Controller searchPlayer pageNumber is {}", pageDTO.getPageNumber());
         log.info("MY-INFO : Controller searchPlayer existPrev is {}", existPrev);
         log.info("MY-INFO : Controller searchPlayer existNext is {}", existNext);
         return null;
