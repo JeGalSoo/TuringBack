@@ -16,8 +16,14 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class TeamServiceImpl implements TeamService {
 
+private final TeamRepository repository;
+    @Override
+    public Long countAllTeams() {
+        return repository.countAllTeams();
+    }
 
-  // @Override
+
+    // @Override
   // public List<TeamDto> findTeamByPlayerHeightAndRegionName() {
   //   String regionName1 = "수원";
   //   String regionName2 = "대전";

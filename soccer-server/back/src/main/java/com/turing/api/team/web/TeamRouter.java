@@ -32,11 +32,13 @@ public class TeamRouter {
             case "119" -> repository.getAllTeamsDsl();
             case "1" -> repository.getNo1Dsl();
             case "10" -> repository.getNo10Dsl(position1,regionName1, regionName2);
-            case "12" -> repository.getNo12Dsl(regionName1, regionName2); //
-            case "13"->repository.getNo13Dsl();
-            case "19"->repository.getNo19Dsl(regionName1); //
-            case "20"->repository.getNo20Dsl(position1); //
-            case "21"->repository.getNo21Dsl(); //
+            case "12" -> List.of(repository.getNo12Dsl(regionName1, regionName2)).stream().toList(); //
+            case "13"->repository.getNo13Dsl(); 
+            case "19"->repository.getNo19Dsl(regionName1); 
+            case "20"->repository.getNo20Dsl(position1); 
+            case "21"->repository.getNo21Dsl(); 
+
+            case "55"->List.of(service.countAllTeams()).stream().toList(); 
 
             case "31" -> repository.findAllTeams();
             case "310" -> repository.findTeamByPosionAndRegionName(position1,regionName1, regionName2);
